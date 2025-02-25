@@ -26,7 +26,9 @@ public class Airport {
     @OneToMany(mappedBy = "arrivalAirport", cascade = CascadeType.ALL)
     private List<Aircraft> arrivingAircrafts;
 
-    public Airport() {}
+    public Airport() {
+
+    }
 
     public Airport(String name, String code, Cities city) {
         this.name = name;
@@ -34,22 +36,52 @@ public class Airport {
         this.city = city;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getCode() { return code; }
-    public void setCode(String code) { this.code = code; }
+    public String getName() {
+        return name;
+    }
 
-    public Cities getCity() { return city; }
-    public void setCity(Cities city) { this.city = city; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public List<Aircraft> getDepartingAircrafts() { return departingAircrafts; }
-    public void setDepartingAircrafts(List<Aircraft> departingAircrafts) { this.departingAircrafts = departingAircrafts; }
+    public String getCode() {
+        return code;
+    }
 
-    public List<Aircraft> getArrivingAircrafts() { return arrivingAircrafts; }
-    public void setArrivingAircrafts(List<Aircraft> arrivingAircrafts) { this.arrivingAircrafts = arrivingAircrafts; }
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Cities getCity() {
+        return city;
+    }
+
+    public void setCity(Cities city) {
+        this.city = city;
+    }
+
+    public List<Aircraft> getDepartingAircrafts() {
+        return departingAircrafts;
+    }
+
+    public void setDepartingAircrafts(List<Aircraft> departingAircrafts) {
+        this.departingAircrafts = departingAircrafts;
+    }
+
+    public List<Aircraft> getArrivingAircrafts() {
+        return arrivingAircrafts;
+    }
+
+    public void setArrivingAircrafts(List<Aircraft> arrivingAircrafts) {
+        this.arrivingAircrafts = arrivingAircrafts;
+    }
 }
 

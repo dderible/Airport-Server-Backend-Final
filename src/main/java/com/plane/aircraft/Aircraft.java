@@ -34,22 +34,47 @@ public class Aircraft {
         this.arrivalAirport = arrivalAirport;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getModel() { return model; }
-    public void setModel(String model) { this.model = model; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getAirline() { return airline; }
-    public void setAirline(String airline) { this.airline = airline; }
+    public String getModel() {
+        return model;
+    }
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-    public Airport getDepartureAirport() { return departureAirport; }
-    public void setDepartureAirport(Airport departureAirport) { this.departureAirport = departureAirport; }
+    public String getAirline()
+    { return airline;
+    }
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
 
-    public Airport getArrivalAirport() { return arrivalAirport; }
-    public void setArrivalAirport(Airport arrivalAirport) { this.arrivalAirport = arrivalAirport; }
+    public Airport getDepartureAirport() {
+        return departureAirport;
+    }
+    public void setDepartureAirport(Airport departureAirport) {
+        this.departureAirport = departureAirport;
+    }
 
-    public List<Passengers> getPassengers() { return passengers; }
-    public void setPassengers(List<Passengers> passengers) { this.passengers = passengers; }
+    public Airport getArrivalAirport() {
+        return arrivalAirport;
+    }
+    public void setArrivalAirport(Airport arrivalAirport) {
+        this.arrivalAirport = arrivalAirport;
+    }
+
+    public List<Passengers> getPassengers() {
+        return passengers;
+    }
+    public void setPassengers(List<Passengers> passengers) {
+        this.passengers = passengers;
+    }
 }
 
