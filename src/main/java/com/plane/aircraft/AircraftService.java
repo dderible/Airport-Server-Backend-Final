@@ -1,4 +1,50 @@
 package com.plane.aircraft;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
 public class AircraftService {
+    @Autowired
+    private AircraftRepository aircraftRepository;
+
+    public List<Aircraft> getAllAircrafts() {
+        return aircraftRepository.findAll();
+    }
+
+    public Aircraft getAircraftById(Long id) {
+        return aircraftRepository.findById(id).orElse(null);
+    }
+
+    public List<Aircraft> getAircraftsByDepartureAirport(Long airportId) {
+        return aircraftRepository.findByDepartureAirportId(airportId);
+    }
+
+    public List<Aircraft> getAircraftsByArrivalAirport(Long airportId) {
+        return aircraftRepository.findByArrivalAirportId(airportId);
+    }
+
+    public Aircraft saveAircraft(Aircraft aircraft) {
+        return aircraftRepository.save(aircraft);
+    }
+
+    public Aircraft updateAircraft(Long id, Aircraft aircraftDetails) {
+        Optional<Aircraft> existingAircraft = aircraftRepository.findById(id);
+        if (existingAircraft.isPresent()) {
+            Aircraft aircraft = existingAircraft.get();
+            aircraft.setModel(aircraftDetails.getModel());
+            aircraft.setAirline(aircraftDetails.getAirline());
+            aircraft.setDepartureAirport(aircraftDetails.getDepartureAirport());
+            aircraft.setArrivalAirport(aircraftDetails.getArrivalAirport());
+            return aircraftRepository.save(aircraft);
+        }
+        return null;
+    }
+
+    public void deleteAircraft(Long id) {
+        aircraftRepository.deleteById(id);
+    }
 }

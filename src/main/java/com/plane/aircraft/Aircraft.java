@@ -49,8 +49,8 @@ public class Aircraft {
         this.model = model;
     }
 
-    public String getAirline()
-    { return airline;
+    public String getAirline() {
+        return airline;
     }
     public void setAirline(String airline) {
         this.airline = airline;
@@ -66,12 +66,14 @@ public class Aircraft {
     public Airport getArrivalAirport() {
         return arrivalAirport;
     }
+
     public void setArrivalAirport(Airport arrivalAirport) {
         this.arrivalAirport = arrivalAirport;
     }
 
     public List<Passengers> getPassengers() {
         return passengers;
+
     }
     public void setPassengers(List<Passengers> passengers) {
         this.passengers = passengers;
