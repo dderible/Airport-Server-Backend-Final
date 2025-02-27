@@ -12,29 +12,29 @@ public class AircraftController {
     @Autowired
     private AircraftService aircraftService;
 
-    @GetMapping
+    @GetMapping("/listAllAircrafts")
     public List<Aircraft> getAllAircrafts() {
         return aircraftService.getAllAircrafts();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listAircraftById")
     public ResponseEntity<Aircraft> getAircraftById(@PathVariable Long id) {
         Aircraft aircraft = aircraftService.getAircraftById(id);
         return aircraft != null ? ResponseEntity.ok(aircraft) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping
+    @PostMapping("/addAircraft")
     public Aircraft createAircraft(@RequestBody Aircraft aircraft) {
         return aircraftService.saveAircraft(aircraft);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateAircraft")
     public ResponseEntity<Aircraft> updateAircraft(@PathVariable Long id, @RequestBody Aircraft aircraftDetails) {
         Aircraft updatedAircraft = aircraftService.updateAircraft(id, aircraftDetails);
         return updatedAircraft != null ? ResponseEntity.ok(updatedAircraft) : ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteAircraft")
     public ResponseEntity<Void> deleteAircraft(@PathVariable Long id) {
         if (aircraftService.getAircraftById(id) != null) {
             aircraftService.deleteAircraft(id);

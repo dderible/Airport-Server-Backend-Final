@@ -12,29 +12,29 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
-    @GetMapping
+    @GetMapping("/listAllAirports")
     public List<Airport> getAllAirports() {
         return airportService.getAllAirports();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getAirportById")
     public ResponseEntity<Airport> getAirportById(@PathVariable Long id) {
         Airport airport = airportService.getAirportById(id);
         return airport != null ? ResponseEntity.ok(airport) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping
+    @PostMapping("/createAirport")
     public Airport createAirport(@RequestBody Airport airport) {
         return airportService.saveAirport(airport);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateAirport")
     public ResponseEntity<Airport> updateAirport(@PathVariable Long id, @RequestBody Airport airportDetails) {
         Airport updatedAirport = airportService.updateAirport(id, airportDetails);
         return updatedAirport != null ? ResponseEntity.ok(updatedAirport) : ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteAirport")
     public ResponseEntity<Void> deleteAirport(@PathVariable Long id) {
         if (airportService.getAirportById(id) != null) {
             airportService.deleteAirport(id);
