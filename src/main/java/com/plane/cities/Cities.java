@@ -16,7 +16,9 @@ public class Cities {
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL)
     private List<Airport> airports;
 
-    public Cities() {}
+    public Cities() {
+
+    }
 
     public Cities(String name, String country) {
         this.name = name;
@@ -26,6 +28,7 @@ public class Cities {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -33,6 +36,7 @@ public class Cities {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -40,6 +44,7 @@ public class Cities {
     public String getCountry() {
         return country;
     }
+
     public void setCountry(String country) {
         this.country = country;
     }
@@ -47,6 +52,7 @@ public class Cities {
     public List<Airport> getAirports() {
         return airports;
     }
+
     public void setAirports(List<Airport> airports) {
         this.airports = airports;
     }
