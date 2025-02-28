@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cities")
+@CrossOrigin
 public class CitiesController {
     @Autowired
     private CitiesService citiesService;
@@ -17,13 +17,13 @@ public class CitiesController {
         return citiesService.getAllCities();
     }
 
-    @GetMapping("listCitiesById")
-    public ResponseEntity<Cities> getCityById(@PathVariable Long id) {
-        Cities city = citiesService.getCityById(id);
+    @GetMapping("/listCitiesById")
+    public ResponseEntity<Cities> getCityById(@PathVariable Long cityId) {
+        Cities city = citiesService.getCityById(cityId);
         return city != null ? ResponseEntity.ok(city) : ResponseEntity.notFound().build();
     }
 
-    @GetMapping("getCitiesByName")
+    @GetMapping("/getCitiesByName")
     public ResponseEntity<Cities> getCityByName(@PathVariable String name) {
         Cities city = citiesService.getCityByName(name);
         return city != null ? ResponseEntity.ok(city) : ResponseEntity.notFound().build();
@@ -35,15 +35,15 @@ public class CitiesController {
     }
 
     @PutMapping("/updateCity")
-    public ResponseEntity<Cities> updateCity(@PathVariable Long id, @RequestBody Cities cityDetails) {
-        Cities updatedCity = citiesService.updateCity(id, cityDetails);
+    public ResponseEntity<Cities> updateCity(@PathVariable Long cityId, @RequestBody Cities cityDetails) {
+        Cities updatedCity = citiesService.updateCity(cityId, cityDetails);
         return updatedCity != null ? ResponseEntity.ok(updatedCity) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/deleteCity")
-    public ResponseEntity<Void> deleteCity(@PathVariable Long id) {
-        if (citiesService.getCityById(id) != null) {
-            citiesService.deleteCity(id);
+    public ResponseEntity<Void> deleteCity(@PathVariable Long cityId) {
+        if (citiesService.getCityById(cityId) != null) {
+            citiesService.deleteCity(cityId);
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();

@@ -32,12 +32,12 @@ public class Aircraft {
         this.arrivalAirport = arrivalAirport;
     }
 
-    public Long getAircraftId() {
+    public Long getId() {
         return aircraftId;
     }
 
-    public void setAircraftId(Long aircraftId) {
-        this.aircraftId = aircraftId;
+    public void setId(Long id) {
+        this.aircraftId = id;
     }
 
     public String getModel() {

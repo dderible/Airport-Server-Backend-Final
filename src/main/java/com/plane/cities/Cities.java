@@ -8,7 +8,7 @@ import java.util.List;
 public class Cities {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long cityId;
 
     private String name;
     private String country;
@@ -26,11 +26,11 @@ public class Cities {
     }
 
     public Long getId() {
-        return id;
+        return cityId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long cityId) {
+        this.cityId = cityId;
     }
 
     public String getName() {

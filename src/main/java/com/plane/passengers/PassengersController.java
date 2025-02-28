@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/passengers")
+@CrossOrigin
 public class PassengersController {
     @Autowired
     private PassengersService passengersService;
@@ -18,8 +18,8 @@ public class PassengersController {
     }
 
     @GetMapping("/listPassengerById")
-    public ResponseEntity<Passengers> getPassengerById(@PathVariable Long id) {
-        Passengers passenger = passengersService.getPassengerById(id);
+    public ResponseEntity<Passengers> getPassengerById(@PathVariable Long passengerId) {
+        Passengers passenger = passengersService.getPassengerById(passengerId);
         return passenger != null ? ResponseEntity.ok(passenger) : ResponseEntity.notFound().build();
     }
 
@@ -34,15 +34,15 @@ public class PassengersController {
     }
 
     @PutMapping("/updatePassenger")
-    public ResponseEntity<Passengers> updatePassenger(@PathVariable Long id, @RequestBody Passengers passengerDetails) {
-        Passengers updatedPassenger = passengersService.updatePassenger(id, passengerDetails);
+    public ResponseEntity<Passengers> updatePassenger(@PathVariable Long passengerId, @RequestBody Passengers passengerDetails) {
+        Passengers updatedPassenger = passengersService.updatePassenger(passengerId, passengerDetails);
         return updatedPassenger != null ? ResponseEntity.ok(updatedPassenger) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/deletePassenger")
-    public ResponseEntity<Void> deletePassenger(@PathVariable Long id) {
-        if (passengersService.getPassengerById(id) != null) {
-            passengersService.deletePassenger(id);
+    public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerId) {
+        if (passengersService.getPassengerById(passengerId) != null) {
+            passengersService.deletePassenger(passengerId);
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();

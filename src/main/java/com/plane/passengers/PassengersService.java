@@ -16,8 +16,8 @@ public class PassengersService {
         return passengersRepository.findAll();
     }
 
-    public Passengers getPassengerById(Long id) {
-        return passengersRepository.findById(id).orElse(null);
+    public Passengers getPassengerById(Long passengerId) {
+        return passengersRepository.findById(passengerId).orElse(null);
     }
 
     public List<Passengers> getPassengersByAircraft(Long aircraftId) {
@@ -28,8 +28,8 @@ public class PassengersService {
         return passengersRepository.save(passenger);
     }
 
-    public Passengers updatePassenger(Long id, Passengers passengerDetails) {
-        Optional<Passengers> existingPassenger = passengersRepository.findById(id);
+    public Passengers updatePassenger(Long passengerId, Passengers passengerDetails) {
+        Optional<Passengers> existingPassenger = passengersRepository.findById(passengerId);
         if (existingPassenger.isPresent()) {
             Passengers passenger = existingPassenger.get();
             passenger.setName(passengerDetails.getName());
@@ -40,7 +40,7 @@ public class PassengersService {
         return null;
     }
 
-    public void deletePassenger(Long id) {
-        passengersRepository.deleteById(id);
+    public void deletePassenger(Long passengerId) {
+        passengersRepository.deleteById(passengerId);
     }
 }

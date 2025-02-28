@@ -36,12 +36,12 @@ public class Airport {
         this.city = city;
     }
 
-    public Long getId() {
+    public Long getAirportId() {
         return airportId;
     }
 
-    public void setId(Long id) {
-        this.airportId = id;
+    public void setAirportId(Long airportId) {
+        this.airportId = airportId;
     }
 
     public String getName() {

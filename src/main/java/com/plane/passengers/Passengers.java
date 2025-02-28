@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Passengers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long passengerId;
 
     private String name;
     private String email;
@@ -26,12 +26,12 @@ public class Passengers {
         this.aircraft = aircraft;
     }
 
-    public Long getId() {
-        return id;
+    public Long getPassengerId() {
+        return passengerId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPassengerId(Long passengerId) {
+        this.passengerId = passengerId;
     }
 
     public String getName() {
