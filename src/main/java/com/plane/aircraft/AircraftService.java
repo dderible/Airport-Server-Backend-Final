@@ -20,11 +20,11 @@ public class AircraftService {
     }
 
     public List<Aircraft> getAircraftsByDepartureAirport(Long airportId) {
-        return aircraftRepository.findByDepartureAirportId(airportId);
+        return aircraftRepository.findByDepartureAirport_airportId(airportId);
     }
 
     public List<Aircraft> getAircraftsByArrivalAirport(Long airportId) {
-        return aircraftRepository.findByArrivalAirportId(airportId);
+        return aircraftRepository.findByArrivalAirport_airportId(airportId);
     }
 
     public Aircraft saveAircraft(Aircraft aircraft) {

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface AircraftRepository extends JpaRepository<Aircraft, Long> {
-    List<Aircraft> findByDepartureAirportId(Long departureAirportId);
-    List<Aircraft> findByArrivalAirportId(Long arrivalAirportId);
+    List<Aircraft> findByDepartureAirport_airportId(Long departureAirportId);
+    List<Aircraft> findByArrivalAirport_airportId(Long arrivalAirportId);
 }
 
