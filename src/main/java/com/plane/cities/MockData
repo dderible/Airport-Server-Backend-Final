@@ -1,0 +1,79 @@
+{
+    "model": "A001",
+    "airline": "Air Canada",
+    "departureAirport": "St. John's",
+    "arrivalAirport": "Toronto",
+    "passengers": "400"
+}
+
+{
+    "model": "B002",
+    "airline": "WestJet",
+    "departureAirport": "Vancouver",
+    "arrivalAirport": "Edmonton",
+    "passengers": "260"
+}
+
+{
+    "model": "C003",
+    "airline": "American Airlines",
+    "departureAirport": "Windsor",
+    "arrivalAirport": "St. John's",
+    "passengers": "96"
+}
+
+{
+    "model": "D004",
+    "airline": "Delta",
+    "departureAirport": "Winnipeg",
+    "arrivalAirport": "Montreal",
+    "passengers": "300"
+}
+
+{
+    "model": "E005",
+    "airline": "Emirates",
+    "departureAirport": "Halifax",
+    "arrivalAirport": "Corner Book",
+    "passengers": "48"
+}
+
+{
+    "model": "F006",
+    "airline": "Air France",
+    "departureAirport": "Quebec City",
+    "arrivalAirport": "St. Pierre",
+    "passengers": "108"
+}
+
+{
+    "model": "G007",
+    "airline": "Air Canada Rouge",
+    "departureAirport": "Saint John",
+    "arrivalAirport": "Saskatoon",
+    "passengers": "154"
+}
+
+{
+    "model": "H008",
+    "airline": "Qatar",
+    "departureAirport": "Fredericton",
+    "arrivalAirport": "Vancouver",
+    "passengers": "344"
+}
+
+{
+    "model": "I009",
+    "airline": "United Airlines",
+    "departureAirport": "Montreal",
+    "arrivalAirport": "Kitchener",
+    "passengers": "420"
+}
+
+{
+    "model": "J010",
+    "airline": "Sprint",
+    "departureAirport": "Calgary",
+    "arrivalAirport": "London",
+    "passengers": "564"
+}
