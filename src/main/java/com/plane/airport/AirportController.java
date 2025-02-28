@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/airports")
+@CrossOrigin
 public class AirportController {
     @Autowired
     private AirportService airportService;
@@ -18,8 +18,8 @@ public class AirportController {
     }
 
     @GetMapping("/getAirportById")
-    public ResponseEntity<Airport> getAirportById(@PathVariable Long id) {
-        Airport airport = airportService.getAirportById(id);
+    public ResponseEntity<Airport> getAirportById(@PathVariable Long airportId) {
+        Airport airport = airportService.getAirportById(airportId);
         return airport != null ? ResponseEntity.ok(airport) : ResponseEntity.notFound().build();
     }
 
@@ -29,15 +29,15 @@ public class AirportController {
     }
 
     @PutMapping("/updateAirport")
-    public ResponseEntity<Airport> updateAirport(@PathVariable Long id, @RequestBody Airport airportDetails) {
-        Airport updatedAirport = airportService.updateAirport(id, airportDetails);
+    public ResponseEntity<Airport> updateAirport(@PathVariable Long airportId, @RequestBody Airport airportDetails) {
+        Airport updatedAirport = airportService.updateAirport(airportId, airportDetails);
         return updatedAirport != null ? ResponseEntity.ok(updatedAirport) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/deleteAirport")
-    public ResponseEntity<Void> deleteAirport(@PathVariable Long id) {
-        if (airportService.getAirportById(id) != null) {
-            airportService.deleteAirport(id);
+    public ResponseEntity<Void> deleteAirport(@PathVariable Long airportId) {
+        if (airportService.getAirportById(airportId) != null) {
+            airportService.deleteAirport(airportId);
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();

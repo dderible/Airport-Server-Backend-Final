@@ -11,7 +11,7 @@ import java.util.List;
 public class Airport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long airportId;
 
     private String name;
     private String code;
@@ -37,11 +37,11 @@ public class Airport {
     }
 
     public Long getId() {
-        return id;
+        return airportId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.airportId = id;
     }
 
     public String getName() {
