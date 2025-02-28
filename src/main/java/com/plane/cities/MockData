@@ -1,79 +1,59 @@
 {
-    "model": "A001",
-    "airline": "Air Canada",
-    "departureAirport": "St. John's",
-    "arrivalAirport": "Toronto",
-    "passengers": "400"
+    "name": "St. John's",
+    "country": "Canada",
+    "airports": "2"
 }
 
 {
-    "model": "B002",
-    "airline": "WestJet",
-    "departureAirport": "Vancouver",
-    "arrivalAirport": "Edmonton",
-    "passengers": "260"
+    "name": "Toronto",
+    "country": "Canada",
+    "airports": "5"
 }
 
 {
-    "model": "C003",
-    "airline": "American Airlines",
-    "departureAirport": "Windsor",
-    "arrivalAirport": "St. John's",
-    "passengers": "96"
+    "name": "Vancouver",
+    "country": "Canada",
+    "airports": "8"
 }
 
 {
-    "model": "D004",
-    "airline": "Delta",
-    "departureAirport": "Winnipeg",
-    "arrivalAirport": "Montreal",
-    "passengers": "300"
+    "name": "Edmonton",
+    "country": "Canada",
+    "airports": "4"
 }
 
 {
-    "model": "E005",
-    "airline": "Emirates",
-    "departureAirport": "Halifax",
-    "arrivalAirport": "Corner Book",
-    "passengers": "48"
+    "name": "Winnipeg",
+    "country": "Canada",
+    "airports": "9"
 }
 
 {
-    "model": "F006",
-    "airline": "Air France",
-    "departureAirport": "Quebec City",
-    "arrivalAirport": "St. Pierre",
-    "passengers": "108"
+    "name": "Montreal",
+    "country": "Canada",
+    "airports": "6"
 }
 
 {
-    "model": "G007",
-    "airline": "Air Canada Rouge",
-    "departureAirport": "Saint John",
-    "arrivalAirport": "Saskatoon",
-    "passengers": "154"
+    "name": "Calgary",
+    "country": "Canada",
+    "airports": "7"
 }
 
 {
-    "model": "H008",
-    "airline": "Qatar",
-    "departureAirport": "Fredericton",
-    "arrivalAirport": "Vancouver",
-    "passengers": "344"
+    "name": "London",
+    "country": "Canada",
+    "airports": "1"
 }
 
 {
-    "model": "I009",
-    "airline": "United Airlines",
-    "departureAirport": "Montreal",
-    "arrivalAirport": "Kitchener",
-    "passengers": "420"
+    "name": "Thunder Bay",
+    "country": "Canada",
+    "airports": "3"
 }
 
 {
-    "model": "J010",
-    "airline": "Sprint",
-    "departureAirport": "Calgary",
-    "arrivalAirport": "London",
-    "passengers": "564"
+    "name": "Quebec City",
+    "country": "Canada",
+    "airports": "7"
 }

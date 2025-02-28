@@ -1,0 +1,89 @@
+{
+    "airportId": "1",
+    "name": "Alpha",
+    "code": "111",
+    "city": "St. John's",
+    "departingAircrafts": "3",
+    "arrivingAircrafts": "2"
+}
+
+{
+    "airportId": "2",
+    "name": "Beta",
+    "code": "222",
+    "city": "Toronto",
+    "departingAircrafts": "9",
+    "arrivingAircrafts": "5"
+}
+
+{
+    "airportId": "3",
+    "name": "Charlie",
+    "code": "333",
+    "city": "Vancouver",
+    "departingAircrafts": "2",
+    "arrivingAircrafts": "7"
+}
+
+{
+    "airportId": "4",
+    "name": "Delta",
+    "code": "444",
+    "city": "Edmonton",
+    "departingAircrafts": "10",
+    "arrivingAircrafts": "12"
+}
+
+{
+    "airportId": "5",
+    "name": "Echo",
+    "code": "555",
+    "city": "Winnipeg",
+    "departingAircrafts": "8",
+    "arrivingAircrafts": "15"
+}
+
+{
+    "airportId": "6",
+    "name": "Foxtrot",
+    "code": "666",
+    "city": "Montreal",
+    "departingAircrafts": "6",
+    "arrivingAircrafts": "6"
+}
+
+{
+    "airportId": "7",
+    "name": "Gamma",
+    "code": "777",
+    "city": "Calgary",
+    "departingAircrafts": "1",
+    "arrivingAircrafts": "12"
+}
+
+{
+    "airportId": "8",
+    "name": "Hotel",
+    "code": "888",
+    "city": "London",
+    "departingAircrafts": "6",
+    "arrivingAircrafts": "2"
+}
+
+{
+    "airportId": "9",
+    "name": "India",
+    "code": "999",
+    "city": "Thunder Bay",
+    "departingAircrafts": "14",
+    "arrivingAircrafts": "3"
+}
+
+{
+    "airportId": "10",
+    "name": "Juliet",
+    "code": "000",
+    "city": "Quebec City",
+    "departingAircrafts": "11",
+    "arrivingAircrafts": "21"
+}
