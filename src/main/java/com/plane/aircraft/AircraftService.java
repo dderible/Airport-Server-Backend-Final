@@ -15,8 +15,8 @@ public class AircraftService {
         return aircraftRepository.findAll();
     }
 
-    public Aircraft getAircraftById(Long id) {
-        return aircraftRepository.findById(id).orElse(null);
+    public Aircraft getAircraftById(Long aircraftId) {
+        return aircraftRepository.findById(aircraftId).orElse(null);
     }
 
     public List<Aircraft> getAircraftsByDepartureAirport(Long airportId) {
@@ -31,8 +31,8 @@ public class AircraftService {
         return aircraftRepository.save(aircraft);
     }
 
-    public Aircraft updateAircraft(Long id, Aircraft aircraftDetails) {
-        Optional<Aircraft> existingAircraft = aircraftRepository.findById(id);
+    public Aircraft updateAircraft(Long aircraftId, Aircraft aircraftDetails) {
+        Optional<Aircraft> existingAircraft = aircraftRepository.findById(aircraftId);
         if (existingAircraft.isPresent()) {
             Aircraft aircraft = existingAircraft.get();
             aircraft.setModel(aircraftDetails.getModel());
@@ -44,7 +44,7 @@ public class AircraftService {
         return null;
     }
 
-    public void deleteAircraft(Long id) {
-        aircraftRepository.deleteById(id);
+    public void deleteAircraft(Long aircraftId) {
+        aircraftRepository.deleteById(aircraftId);
     }
 }

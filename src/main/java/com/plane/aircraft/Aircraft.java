@@ -9,7 +9,7 @@ import java.util.List;
 public class Aircraft {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long aircraftId;
 
     private String model;
     private String airline;
@@ -25,8 +25,6 @@ public class Aircraft {
     @OneToMany(mappedBy = "aircraft", cascade = CascadeType.ALL)
     private List<Passengers> passengers;
 
-    public Aircraft() {}
-
     public Aircraft(String model, String airline, Airport departureAirport, Airport arrivalAirport) {
         this.model = model;
         this.airline = airline;
@@ -34,12 +32,12 @@ public class Aircraft {
         this.arrivalAirport = arrivalAirport;
     }
 
-    public Long getId() {
-        return id;
+    public Long getAircraftId() {
+        return aircraftId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAircraftId(Long aircraftId) {
+        this.aircraftId = aircraftId;
     }
 
     public String getModel() {

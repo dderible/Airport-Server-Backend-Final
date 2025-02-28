@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/aircrafts")
+@CrossOrigin
 public class AircraftController {
     @Autowired
     private AircraftService aircraftService;
@@ -18,8 +18,8 @@ public class AircraftController {
     }
 
     @GetMapping("/listAircraftById")
-    public ResponseEntity<Aircraft> getAircraftById(@PathVariable Long id) {
-        Aircraft aircraft = aircraftService.getAircraftById(id);
+    public ResponseEntity<Aircraft> getAircraftById(@PathVariable Long aircraftId) {
+        Aircraft aircraft = aircraftService.getAircraftById(aircraftId);
         return aircraft != null ? ResponseEntity.ok(aircraft) : ResponseEntity.notFound().build();
     }
 
@@ -29,15 +29,15 @@ public class AircraftController {
     }
 
     @PutMapping("/updateAircraft")
-    public ResponseEntity<Aircraft> updateAircraft(@PathVariable Long id, @RequestBody Aircraft aircraftDetails) {
-        Aircraft updatedAircraft = aircraftService.updateAircraft(id, aircraftDetails);
+    public ResponseEntity<Aircraft> updateAircraft(@PathVariable Long aircraftId, @RequestBody Aircraft aircraftDetails) {
+        Aircraft updatedAircraft = aircraftService.updateAircraft(aircraftId, aircraftDetails);
         return updatedAircraft != null ? ResponseEntity.ok(updatedAircraft) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/deleteAircraft")
-    public ResponseEntity<Void> deleteAircraft(@PathVariable Long id) {
-        if (aircraftService.getAircraftById(id) != null) {
-            aircraftService.deleteAircraft(id);
+    public ResponseEntity<Void> deleteAircraft(@PathVariable Long aircraftId) {
+        if (aircraftService.getAircraftById(aircraftId) != null) {
+            aircraftService.deleteAircraft(aircraftId);
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
