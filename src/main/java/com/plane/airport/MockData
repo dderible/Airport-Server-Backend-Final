@@ -1,5 +1,4 @@
 {
-    "airportId": "1",
     "name": "Alpha",
     "code": "111",
     "city": "St. John's",
@@ -8,7 +7,6 @@
 }
 
 {
-    "airportId": "2",
     "name": "Beta",
     "code": "222",
     "city": "Toronto",
@@ -17,7 +15,6 @@
 }
 
 {
-    "airportId": "3",
     "name": "Charlie",
     "code": "333",
     "city": "Vancouver",
@@ -26,7 +23,6 @@
 }
 
 {
-    "airportId": "4",
     "name": "Delta",
     "code": "444",
     "city": "Edmonton",
@@ -35,7 +31,6 @@
 }
 
 {
-    "airportId": "5",
     "name": "Echo",
     "code": "555",
     "city": "Winnipeg",
@@ -44,7 +39,6 @@
 }
 
 {
-    "airportId": "6",
     "name": "Foxtrot",
     "code": "666",
     "city": "Montreal",
@@ -53,7 +47,6 @@
 }
 
 {
-    "airportId": "7",
     "name": "Gamma",
     "code": "777",
     "city": "Calgary",
@@ -62,7 +55,6 @@
 }
 
 {
-    "airportId": "8",
     "name": "Hotel",
     "code": "888",
     "city": "London",
@@ -71,7 +63,6 @@
 }
 
 {
-    "airportId": "9",
     "name": "India",
     "code": "999",
     "city": "Thunder Bay",
@@ -80,7 +71,6 @@
 }
 
 {
-    "airportId": "10",
     "name": "Juliet",
     "code": "000",
     "city": "Quebec City",
