@@ -1,79 +1,59 @@
 {
     "name": "St. John's",
     "country": "Canada",
-    "airports": [
-                        { "code": "YYT", "name": "St. John's International Airport" }
-                    ]
+    "airports": []
+}
+
+{
+    "name": "Montréal",
+    "country": "Canada",
+    "airports": []
 }
 
 {
     "name": "Toronto",
     "country": "Canada",
-    "airports": [
-                        { "code": "YYZ", "name": "Toronto Pearson Airport" }
-                    ]
+    "airports": []
 }
 
 {
     "name": "Vancouver",
     "country": "Canada",
-    "airports": [
-                        { "code": "YVR", "name": "Vancouver International Airport" }
-                    ]
-}
-
-{
-    "name": "Edmonton",
-    "country": "Canada",
-    "airports": [
-                        { "code": "YEG", "name": "Edmonton International Airport" }
-                    ]
-}
-
-{
-    "name": "Winnipeg",
-    "country": "Canada",
-    "airports": [
-                        { "code": "YWG", "name": "Winnipeg Richardson International Airport" }
-                    ]
-}
-
-{
-    "name": "Montreal",
-    "country": "Canada",
-    "airports": [
-                        { "code": "YUL", "name": "Aéroport International Montréal Trudeau" }
-                    ]
+    "airports": []
 }
 
 {
     "name": "Calgary",
     "country": "Canada",
-    "airports": [
-                        { "code": "YYC", "name": "Calgary International Airport" }
-                    ]
+    "airports": []
 }
 
 {
-    "name": "London",
+    "name": "Edmonton",
     "country": "Canada",
-    "airports": [
-                        { "code": "YXU", "name": "London International Airport" }
-                    ]
+    "airports": []
 }
 
 {
-    "name": "Thunder Bay",
+    "name": "Winnipeg",
     "country": "Canada",
-    "airports": [
-                        { "code": "YQT", "name": "Thunder Bay International Airport" }
-                    ]
+    "airports": []
 }
 
 {
     "name": "Quebec City",
     "country": "Canada",
-    "airports": [
-                        { "code": "YQB", "name": "Aéroport international Jean-Lesage de Québec" }
-                    ]
+    "airports": []
+}
+
+{
+    "name": "Halifax",
+    "country": "Canada",
+    "airports": []
+}
+
+{
+    "name": "Ottawa",
+    "country": "Canada",
+    "airports": []
 }
