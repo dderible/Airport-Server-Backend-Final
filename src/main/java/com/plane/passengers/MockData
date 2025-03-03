@@ -1,59 +1,52 @@
-{
-    "name": "Declan Derible",
-    "email": "decder@keyin.com",
-    "aircraft": "A001"
-}
-
-{
-    "name": "Logan Oram",
-    "email": "logora@keyin.com",
-    "aircraft": "B002"
-}
-
-{
-    "name": "Nicholas Sharpe",
-    "email": "nicsha@keyin.com",
-    "aircraft": "C003"
-}
-
-{
-    "name": "Daniel Bowers Jr.",
-    "email": "danbow@keyin.com",
-    "aircraft": "D004"
-}
-
-{
-    "name": "Jamie Cornick",
-    "email": "jamcor@keyin.com",
-    "aircraft": "E005"
-}
-
-{
-    "name": "Jordan Kelloway",
-    "email": "jorkel@keyin.com",
-    "aircraft": "F006"
-}
-
-{
-    "name": "Kennedy Azupwah",
-    "email": "kenazu@keyin.com",
-    "aircraft": "G007"
-}
-
-{
-    "name": "Matthew English",
-    "email": "mateng@keyin.com",
-    "aircraft": "H008"
-}
-
-{
-    "name": "Annie Malik",
-    "email": "annmal@keyin.com",
-    "aircraft": "I009"
-}
-
-{
-    "name": "Maurice Babin",
-    "email": "moalright@keyin.com",
-    "aircraft": "J010"
-}
+[
+    {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "Alice Smith",
+        "email": "alicesmith@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "Michael Johnson",
+        "email": "michaelj@example.com",
+        "aircraft": "AC320
+    },
+    {
+        "name": "Emily Brown",
+        "email": "emilybrown@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "David Wilson",
+        "email": "davidwilson@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "Sophia Martinez",
+        "email": "sophiam@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "James Anderson",
+        "email": "jamesa@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "Olivia White",
+        "email": "oliviawhite@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "William Harris",
+        "email": "williamh@example.com",
+        "aircraft": "AC320"
+    },
+    {
+        "name": "Isabella Clark",
+        "email": "isabellac@example.com",
+        "aircraft": "AC320"
+    }
+]

@@ -37,8 +37,6 @@ public class AircraftService {
             Aircraft aircraft = existingAircraft.get();
             aircraft.setModel(aircraftDetails.getModel());
             aircraft.setAirline(aircraftDetails.getAirline());
-            aircraft.setDepartureAirport(aircraftDetails.getDepartureAirport());
-            aircraft.setArrivalAirport(aircraftDetails.getArrivalAirport());
             return aircraftRepository.save(aircraft);
         }
         return null;

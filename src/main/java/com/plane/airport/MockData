@@ -1,79 +1,59 @@
 {
-    "name": "Alpha",
-    "code": "111",
-    "city": "St. John's",
-    "departingAircrafts": "3",
-    "arrivingAircrafts": "2"
+    "name": "St.John's International Airport",
+    "code": "YYT",
+    "city": "St. John's"
 }
 
 {
-    "name": "Beta",
-    "code": "222",
-    "city": "Toronto",
-    "departingAircrafts": "9",
-    "arrivingAircrafts": "5"
+    "name": "Toronto Pearson International Airport",
+    "code": "YYZ",
+    "city": "Toronto"
 }
 
 {
-    "name": "Charlie",
-    "code": "333",
-    "city": "Vancouver",
-    "departingAircrafts": "2",
-    "arrivingAircrafts": "7"
+    "name": "Vancouver International Airport",
+    "code": "YVR",
+    "city": "Vancouver"
 }
 
 {
-    "name": "Delta",
-    "code": "444",
-    "city": "Edmonton",
-    "departingAircrafts": "10",
-    "arrivingAircrafts": "12"
+    "name": "Edmonton International Airport",
+    "code": "YEG",
+    "city": "Edmonton"
 }
 
 {
-    "name": "Echo",
-    "code": "555",
-    "city": "Winnipeg",
-    "departingAircrafts": "8",
-    "arrivingAircrafts": "15"
+    "name": "Winnipeg Richardson International Airport",
+    "code": "YWG",
+    "city": "Winnipeg"
 }
 
 {
-    "name": "Foxtrot",
-    "code": "666",
-    "city": "Montreal",
-    "departingAircrafts": "6",
-    "arrivingAircrafts": "6"
+    "name": "Montréal-Pierre Elliott Trudeau International Airport",
+    "code": "YUL",
+    "city": "Montreal"
 }
 
 {
-    "name": "Gamma",
-    "code": "777",
-    "city": "Calgary",
-    "departingAircrafts": "1",
-    "arrivingAircrafts": "12"
+    "name": "Calgary International Airport",
+    "code": "YYC",
+    "city": "Calgary"
 }
 
 {
-    "name": "Hotel",
-    "code": "888",
-    "city": "London",
-    "departingAircrafts": "6",
-    "arrivingAircrafts": "2"
+    "name": "Halifax Stanfield International Airport",
+    "code": "YHZ",
+    "city": "Halifax"
 }
 
 {
-    "name": "India",
-    "code": "999",
-    "city": "Thunder Bay",
-    "departingAircrafts": "14",
-    "arrivingAircrafts": "3"
+    "name": "Ottawa International Airport",
+    "code": "YOW",
+    "city": "Ottawa"
 }
 
 {
-    "name": "Juliet",
-    "code": "000",
-    "city": "Quebec City",
-    "departingAircrafts": "11",
-    "arrivingAircrafts": "21"
+    "name": "Québec City Jean Lesage International Airport",
+    "code": "YQB",
+    "city": "Quebec City"
 }

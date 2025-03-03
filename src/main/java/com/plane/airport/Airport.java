@@ -20,12 +20,6 @@ public class Airport {
     @JoinColumn(name = "city_id")
     private Cities city;
 
-    @OneToMany(mappedBy = "departureAirport", cascade = CascadeType.ALL)
-    private List<Aircraft> departingAircrafts;
-
-    @OneToMany(mappedBy = "arrivalAirport", cascade = CascadeType.ALL)
-    private List<Aircraft> arrivingAircrafts;
-
     public Airport() {
 
     }
@@ -66,22 +60,6 @@ public class Airport {
 
     public void setCity(Cities city) {
         this.city = city;
-    }
-
-    public List<Aircraft> getDepartingAircrafts() {
-        return departingAircrafts;
-    }
-
-    public void setDepartingAircrafts(List<Aircraft> departingAircrafts) {
-        this.departingAircrafts = departingAircrafts;
-    }
-
-    public List<Aircraft> getArrivingAircrafts() {
-        return arrivingAircrafts;
-    }
-
-    public void setArrivingAircrafts(List<Aircraft> arrivingAircrafts) {
-        this.arrivingAircrafts = arrivingAircrafts;
     }
 }
 
