@@ -19,14 +19,6 @@ public class AircraftService {
         return aircraftRepository.findById(aircraftId).orElse(null);
     }
 
-    public List<Aircraft> getAircraftsByDepartureAirport(Long airportId) {
-        return aircraftRepository.findByDepartureAirport_airportId(airportId);
-    }
-
-    public List<Aircraft> getAircraftsByArrivalAirport(Long airportId) {
-        return aircraftRepository.findByArrivalAirport_airportId(airportId);
-    }
-
     public Aircraft saveAircraft(Aircraft aircraft) {
         return aircraftRepository.save(aircraft);
     }

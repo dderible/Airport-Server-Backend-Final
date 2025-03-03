@@ -19,7 +19,7 @@ public class Aircraft {
     @OneToMany(mappedBy = "aircraft", cascade = CascadeType.ALL)
     private List<Passengers> passengers;
 
-    public Aircraft(String model, String airline, Airport departureAirport, Airport arrivalAirport) {
+    public Aircraft(String model, String airline) {
         this.model = model;
         this.airline = airline;
     }
