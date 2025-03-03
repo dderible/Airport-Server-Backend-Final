@@ -1,59 +1,79 @@
 {
     "name": "St. John's",
     "country": "Canada",
-    "airports": "2"
+    "airports": [
+                        { "code": "YYT", "name": "St. John's International Airport" }
+                    ]
 }
 
 {
     "name": "Toronto",
     "country": "Canada",
-    "airports": "5"
+    "airports": [
+                        { "code": "YYZ", "name": "Toronto Pearson Airport" }
+                    ]
 }
 
 {
     "name": "Vancouver",
     "country": "Canada",
-    "airports": "8"
+    "airports": [
+                        { "code": "YVR", "name": "Vancouver International Airport" }
+                    ]
 }
 
 {
     "name": "Edmonton",
     "country": "Canada",
-    "airports": "4"
+    "airports": [
+                        { "code": "YEG", "name": "Edmonton International Airport" }
+                    ]
 }
 
 {
     "name": "Winnipeg",
     "country": "Canada",
-    "airports": "9"
+    "airports": [
+                        { "code": "YWG", "name": "Winnipeg Richardson International Airport" }
+                    ]
 }
 
 {
     "name": "Montreal",
     "country": "Canada",
-    "airports": "6"
+    "airports": [
+                        { "code": "YUL", "name": "Aéroport International Montréal Trudeau" }
+                    ]
 }
 
 {
     "name": "Calgary",
     "country": "Canada",
-    "airports": "7"
+    "airports": [
+                        { "code": "YYC", "name": "Calgary International Airport" }
+                    ]
 }
 
 {
     "name": "London",
     "country": "Canada",
-    "airports": "1"
+    "airports": [
+                        { "code": "YXU", "name": "London International Airport" }
+                    ]
 }
 
 {
     "name": "Thunder Bay",
     "country": "Canada",
-    "airports": "3"
+    "airports": [
+                        { "code": "YQT", "name": "Thunder Bay International Airport" }
+                    ]
 }
 
 {
     "name": "Quebec City",
     "country": "Canada",
-    "airports": "7"
+    "airports": [
+                        { "code": "YQB", "name": "Aéroport international Jean-Lesage de Québec" }
+                    ]
 }
