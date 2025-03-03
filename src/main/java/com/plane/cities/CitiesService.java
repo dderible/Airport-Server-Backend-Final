@@ -15,8 +15,8 @@ public class CitiesService {
         return citiesRepository.findAll();
     }
 
-    public Cities getCityById(Long cityId) {
-        return citiesRepository.findById(cityId).orElse(null);
+    public Cities getCityById(Long id) {
+        return citiesRepository.findById(id).orElse(null);
     }
 
     public Cities getCityByName(String name) {
@@ -27,8 +27,8 @@ public class CitiesService {
         return citiesRepository.save(city);
     }
 
-    public Cities updateCity(Long cityId, Cities cityDetails) {
-        Optional<Cities> existingCity = citiesRepository.findById(cityId);
+    public Cities updateCity(Long id, Cities cityDetails) {
+        Optional<Cities> existingCity = citiesRepository.findById(id);
         if (existingCity.isPresent()) {
             Cities city = existingCity.get();
             city.setName(cityDetails.getName());
@@ -38,8 +38,7 @@ public class CitiesService {
         return null;
     }
 
-    public void deleteCity(Long cityId) {
-        citiesRepository.deleteById(cityId);
+    public void deleteCity(Long id) {
+        citiesRepository.deleteById(id);
     }
 }
-
