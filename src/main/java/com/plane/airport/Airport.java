@@ -5,10 +5,13 @@ import com.plane.aircraft.Aircraft;
 
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Airport {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long airportId;
@@ -16,18 +19,18 @@ public class Airport {
     private String name;
     private String code;
 
-    @ManyToOne
-    @JoinColumn(name = "city_id")
-    private Cities city;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Cities cityName;
 
-    public Airport() {
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Aircraft> aircrafts = new ArrayList<>();
 
-    }
+    public Airport() {}
 
-    public Airport(String name, String code, Cities city) {
+    public Airport(String name, String code, Cities cityName) {
         this.name = name;
         this.code = code;
-        this.city = city;
+        this.cityName= cityName;
     }
 
     public Long getAirportId() {
@@ -54,12 +57,21 @@ public class Airport {
         this.code = code;
     }
 
-    public Cities getCity() {
-        return city;
+    public Cities getCityName() {
+        return cityName;
     }
 
-    public void setCity(Cities city) {
-        this.city = city;
+    public void setCityName(Cities cityName) {
+        this.cityName = cityName;
     }
+
+    public List<Aircraft> getAircrafts() {
+        return aircrafts;
+    }
+
+    public void setAircrafts(List<Aircraft> aircrafts) {
+        this.aircrafts = aircrafts;
+    }
+
 }
 

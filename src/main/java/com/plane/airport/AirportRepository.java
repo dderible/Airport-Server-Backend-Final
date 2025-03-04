@@ -1,12 +1,11 @@
 package com.plane.airport;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface AirportRepository extends JpaRepository<Airport, Long> {
-    List<Airport> findByCityId(Long cityId);
+public interface AirportRepository extends CrudRepository<Airport, Long> {
+    Iterable<Airport> findAirportByCityName_cityId(Long cityId);
+    public Airport findByAirportId(Long airportId);
 }
 

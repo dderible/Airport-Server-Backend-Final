@@ -1,5 +1,6 @@
 package com.plane.airport;
 
+import com.plane.cities.CitiesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,39 +9,51 @@ import java.util.Optional;
 
 @Service
 public class AirportService {
+
     @Autowired
     private AirportRepository airportRepository;
 
-    public List<Airport> getAllAirports() {
-        return airportRepository.findAll();
-    }
+    @Autowired
+    private CitiesRepository citiesRepository;
 
-    public Airport getAirportById(Long airportId) {
-        return airportRepository.findById(airportId).orElse(null);
-    }
-
-    public List<Airport> getAirportsByCity(Long cityId) {
-        return airportRepository.findByCityId(cityId);
-    }
-
-    public Airport saveAirport(Airport airport) {
+    public Airport addAirport(Airport airport) {
         return airportRepository.save(airport);
     }
 
-    public Airport updateAirport(Long airportId, Airport airportDetails) {
-        Optional<Airport> existingAirport = airportRepository.findById(airportId);
-        if (existingAirport.isPresent()) {
-            Airport airport = existingAirport.get();
-            airport.setName(airportDetails.getName());
-            airport.setCode(airportDetails.getCode());
-            airport.setCity(airportDetails.getCity());
-            return airportRepository.save(airport);
-        }
-        return null;
+    public Iterable<Airport> getAllAirports() {
+        return airportRepository.findAll();
     }
 
-    public void deleteAirport(Long airportId) {
-        airportRepository.deleteById(airportId);
+    public Optional<Airport> getAirportById(Long airportId) {
+        return airportRepository.findById(airportId);
+    }
+
+    public Optional<Airport> updateAirport(Long airportId, Airport updatedAirport) {
+        return airportRepository.findById(airportId).map(airport -> {
+            airport.setName(updatedAirport.getName());
+            airport.setCode(updatedAirport.getCode());
+            airport.setCityName(updatedAirport.getCityName());
+            return airportRepository.save(airport);
+        });
+    }
+
+    public boolean deleteAirport(Long airportId) {
+        if (airportRepository.existsById(airportId)) {
+            airportRepository.deleteById(airportId);
+            return true;
+        }
+        return false;
+    }
+
+    public Iterable<Airport> getAirportsByCityId(Long cityId) {
+        if (citiesRepository.existsById(cityId)) {
+            return airportRepository.findAirportByCityName_cityId(cityId);
+        }
+        return List.of();
+    }
+
+    public Airport findByAirportId(Long airportId) {
+        return airportRepository.findByAirportId(airportId);
     }
 }
 
