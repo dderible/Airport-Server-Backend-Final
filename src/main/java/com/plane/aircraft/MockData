@@ -5,55 +5,55 @@
 }
 
 {
-    "model": "AC129",
-    "airline": "Air Canada",
+    "model": "WJ129",
+    "airline": "West Jet",
     "passengers":
 }
 
 {
-    "model": "AC343",
-    "airline": "Air Canada",
-    "passengers":
-}
-
-{
-    "model": "AC872",
-    "airline": "Air Canada",
-    "passengers":
-}
-
-{
-    "model": "AC465",
-    "airline": "Air Canada",
-    "passengers":
-}
-
-{
-    "model": "PO342",
+    "model": "PO343",
     "airline": "Porter Airlines",
     "passengers":
 }
 
 {
-    "model": "PO432",
-    "airline": "Porter Airlines",
+    "model": "SW872",
+    "airline": "Swoop",
     "passengers":
 }
 
 {
-    "model": "PO983",
-    "airline": "Porter Airlines",
+    "model": "SW465",
+    "airline": "SunWing",
     "passengers":
 }
 
 {
-    "model": "PO143",
-    "airline": "Porter Airlines",
+    "model": "DA342",
+    "airline": "Delta Airlines",
     "passengers":
 }
 
 {
-    "model": "PO465",
-    "airline": "Porter Airlines",
+    "model": "AA432",
+    "airline": "American Airlines",
+    "passengers":
+}
+
+{
+    "model": "QA983",
+    "airline": "Qatar Airways",
+    "passengers":
+}
+
+{
+    "model": "EM143",
+    "airline": "Emirates",
+    "passengers":
+}
+
+{
+    "model": "SA465",
+    "airline": "Spirit Airlines",
     "passengers":
 }

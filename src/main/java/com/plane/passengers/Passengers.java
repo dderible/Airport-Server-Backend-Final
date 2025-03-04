@@ -14,16 +14,16 @@ public class Passengers {
 
     @ManyToOne
     @JoinColumn(name = "aircraft_id")
-    private Aircraft aircraft;
+    private Aircraft airline;
 
     public Passengers() {
 
     }
 
-    public Passengers(String name, String email, Aircraft aircraft) {
+    public Passengers(String name, String email, Aircraft airline) {
         this.name = name;
         this.email = email;
-        this.aircraft = aircraft;
+        this.airline = airline;
     }
 
     public Long getPassengerId() {
@@ -51,11 +51,11 @@ public class Passengers {
     }
 
     public Aircraft getAircraft() {
-        return aircraft;
+        return airline;
     }
 
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
+    public void setAircraft(Aircraft airline) {
+        this.airline = airline;
     }
 }
 

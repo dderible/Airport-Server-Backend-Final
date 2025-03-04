@@ -2,51 +2,51 @@
     {
         "name": "John Doe",
         "email": "johndoe@example.com",
-        "aircraft": "AC320"
+        "airline": "Air Canada"
     },
     {
         "name": "Alice Smith",
         "email": "alicesmith@example.com",
-        "aircraft": "AC320"
+        "airline": "West Jet"
     },
     {
         "name": "Michael Johnson",
         "email": "michaelj@example.com",
-        "aircraft": "AC320
+        "airline": "Porter Airlines"
     },
     {
         "name": "Emily Brown",
         "email": "emilybrown@example.com",
-        "aircraft": "AC320"
+        "airline": "Swoop"
     },
     {
         "name": "David Wilson",
         "email": "davidwilson@example.com",
-        "aircraft": "AC320"
+        "airline": "SunWing"
     },
     {
         "name": "Sophia Martinez",
         "email": "sophiam@example.com",
-        "aircraft": "AC320"
+        "airline": "Delta Airlines"
     },
     {
         "name": "James Anderson",
         "email": "jamesa@example.com",
-        "aircraft": "AC320"
+        "airline": "American Airlines"
     },
     {
         "name": "Olivia White",
         "email": "oliviawhite@example.com",
-        "aircraft": "AC320"
+        "airline": "Qatar Airways"
     },
     {
         "name": "William Harris",
         "email": "williamh@example.com",
-        "aircraft": "AC320"
+        "airline": "Emirates"
     },
     {
         "name": "Isabella Clark",
         "email": "isabellac@example.com",
-        "aircraft": "AC320"
+        "airline": "Spirit Airlines"
     }
 ]
