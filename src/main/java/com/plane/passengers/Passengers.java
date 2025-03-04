@@ -5,57 +5,61 @@ import jakarta.persistence.*;
 
 @Entity
 public class Passengers {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long passengerId;
+    private Long passengerID;
+    private String passengerName;
+    private String passengerAddress;
+    private String passengerPhone;
 
-    private String name;
-    private String email;
-
-    @ManyToOne
-    @JoinColumn(name = "aircraft_id")
-    private Aircraft airline;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Aircraft aircraftId;
 
     public Passengers() {
 
     }
 
-    public Passengers(String name, String email, Aircraft airline) {
-        this.name = name;
-        this.email = email;
-        this.airline = airline;
+    public Long getPassengerID() {
+        return passengerID;
+    }
+    public void setPassengerID(Long passengerID) {
+        this.passengerID = passengerID;
+    }
+    public String getPassengerName() {
+        return passengerName;
+    }
+    public void setPassengerName(String passengerName) {
+        this.passengerName = passengerName;
+    }
+    public String getPassengerAddress() {
+        return passengerAddress;
+    }
+    public void setPassengerAddress(String passengerAddress) {
+        this.passengerAddress = passengerAddress;
+    }
+    public String getPassengerPhone() {
+        return passengerPhone;
+    }
+    public void setPassengerPhone(String passengerPhone) {
+        this.passengerPhone = passengerPhone;
     }
 
-    public Long getPassengerId() {
-        return passengerId;
+    public Aircraft getAircraftId() {
+        return aircraftId;
     }
 
-    public void setPassengerId(Long passengerId) {
-        this.passengerId = passengerId;
+    public void setAircraftId(Aircraft aircraftId) {
+        this.aircraftId = aircraftId;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Aircraft getAircraft() {
-        return airline;
-    }
-
-    public void setAircraft(Aircraft airline) {
-        this.airline = airline;
+    public String toString() {
+        return "Passenger: " + passengerName +
+                ", ID:" + passengerID +
+                ", Address: " + passengerAddress +
+                ", Phone: " + passengerPhone;
     }
 }
 

@@ -1,11 +1,11 @@
 package com.plane.passengers;
+import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface PassengersRepository extends JpaRepository<Passengers, Long> {
-    List<Passengers> findByAircraftId(Long aircraftId);
+public interface PassengersRepository extends CrudRepository<Passengers, Long> {
+    Iterable<Passengers> findPassengerByAircraftId_aircraftId(Long aircraftId);
+    Optional<Passengers> findByPassengerID(Long passengerID);
 }

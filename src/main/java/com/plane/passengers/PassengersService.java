@@ -1,46 +1,49 @@
 package com.plane.passengers;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 public class PassengersService {
+
     @Autowired
     private PassengersRepository passengersRepository;
 
-    public List<Passengers> getAllPassengers() {
+    public Passengers addPassenger(Passengers passengers) {
+        return passengersRepository.save(passengers);
+    }
+
+    public Iterable<Passengers> getAllPassengers() {
         return passengersRepository.findAll();
     }
 
-    public Passengers getPassengerById(Long passengerId) {
-        return passengersRepository.findById(passengerId).orElse(null);
+    public Optional<Passengers> findByPassengerID(Long passengerID) {
+        return passengersRepository.findByPassengerID(passengerID);
     }
 
-    public List<Passengers> getPassengersByAircraft(Long aircraftId) {
-        return passengersRepository.findByAircraftId(aircraftId);
+    public Iterable<Passengers> findByAircraftID(Long aircraftID) {
+        return passengersRepository.findPassengerByAircraftId_aircraftId(aircraftID);
     }
 
-    public Passengers savePassenger(Passengers passenger) {
-        return passengersRepository.save(passenger);
-    }
+    public Passengers updatePassenger(Long passengerID, Passengers updatedPassenger) {
+        return passengersRepository.findByPassengerID(passengerID).map(passenger -> {
+            passenger.setPassengerName(updatedPassenger.getPassengerName());
+            passenger.setPassengerAddress(updatedPassenger.getPassengerAddress());
+            passenger.setPassengerPhone(updatedPassenger.getPassengerPhone());
+            passenger.setAircraftId(updatedPassenger.getAircraftId());
 
-    public Passengers updatePassenger(Long passengerId, Passengers passengerDetails) {
-        Optional<Passengers> existingPassenger = passengersRepository.findById(passengerId);
-        if (existingPassenger.isPresent()) {
-            Passengers passenger = existingPassenger.get();
-            passenger.setName(passengerDetails.getName());
-            passenger.setEmail(passengerDetails.getEmail());
-            passenger.setAircraft(passengerDetails.getAircraft());
             return passengersRepository.save(passenger);
-        }
-        return null;
+        }).orElseThrow(() -> new RuntimeException("Passenger not found with id " + passengerID));
     }
 
-    public void deletePassenger(Long passengerId) {
-        passengersRepository.deleteById(passengerId);
+    public boolean deletePassenger(Long passengerID) {
+        if(passengersRepository.existsById(passengerID)) {
+            passengersRepository.deleteById(passengerID);
+        } else {
+            throw new RuntimeException("Passenger not found with id " + passengerID);
+        }
+        return false;
     }
+
 }

@@ -1,51 +1,70 @@
 package com.plane.passengers;
 
+import com.plane.aircraft.Aircraft;
+import com.plane.aircraft.AircraftService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
-import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
 public class PassengersController {
+
     @Autowired
     private PassengersService passengersService;
 
-    @GetMapping("/ListAllPassengers")
-    public List<Passengers> getAllPassengers() {
+    @Autowired
+    private AircraftService aircraftService;
+
+    @GetMapping("/getAllPassengers")
+    public Iterable<Passengers> getAllPassengers() {
         return passengersService.getAllPassengers();
     }
 
-    @GetMapping("/listPassengerById")
-    public ResponseEntity<Passengers> getPassengerById(@PathVariable Long passengerId) {
-        Passengers passenger = passengersService.getPassengerById(passengerId);
-        return passenger != null ? ResponseEntity.ok(passenger) : ResponseEntity.notFound().build();
+    @PostMapping("/addNewPassenger")
+    public Passengers addNewPassenger(@RequestBody Passengers passenger) {
+        Optional<Aircraft> aircraftOptional = Optional.ofNullable(aircraftService.findByAircraftId(passenger.getAircraftId().getAircraftId()));
+
+        Aircraft aircraft;
+        if (aircraftOptional.isPresent()) {
+            aircraft = aircraftOptional.get();
+        } else {
+            // Save the new aircraft if it doesn't exist
+            aircraft = passenger.getAircraftId();
+            aircraftService.addAircraft(aircraft);
+        }
+
+        passenger.setAircraftId(aircraft); // Set the persisted aircraft on the book
+        return passengersService.addPassenger(passenger);
     }
 
-    @GetMapping("/getPassengerByAircraft")
-    public List<Passengers> getPassengersByAircraft(@PathVariable Long aircraftId) {
-        return passengersService.getPassengersByAircraft(aircraftId);
+    @GetMapping("/findByPassengerID/{passengerID}")
+    public ResponseEntity<Passengers> findByPassengerID(@PathVariable Long passengerID) {
+        Optional<Passengers> passengers = passengersService.findByPassengerID(passengerID);
+        return passengers.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/addPassenger")
-    public Passengers createPassenger(@RequestBody Passengers passenger) {
-        return passengersService.savePassenger(passenger);
+    @GetMapping("/getAircraftForPassenger")
+    public Iterable<Passengers> getAircraftForPassenger(@RequestParam("ID") Long passengerID) {
+        return passengersService.findByAircraftID(passengerID);
     }
 
-    @PutMapping("/updatePassenger")
-    public ResponseEntity<Passengers> updatePassenger(@PathVariable Long passengerId, @RequestBody Passengers passengerDetails) {
-        Passengers updatedPassenger = passengersService.updatePassenger(passengerId, passengerDetails);
-        return updatedPassenger != null ? ResponseEntity.ok(updatedPassenger) : ResponseEntity.notFound().build();
+    @PutMapping("/updatePassengerByID/{passengerID}")
+    public ResponseEntity<Passengers> updatePassenger(@PathVariable Long passengerID,@RequestBody Passengers updatedPassenger) {
+        Optional<Passengers> passengers = Optional.ofNullable(passengersService.updatePassenger(passengerID, updatedPassenger));
+        return passengers.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/deletePassenger")
-    public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerId) {
-        if (passengersService.getPassengerById(passengerId) != null) {
-            passengersService.deletePassenger(passengerId);
+    @DeleteMapping("/deletePassengerByID/{passengerID}")
+    public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerID) {
+        if(passengersService.deletePassenger(passengerID)) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
     }
+
+
 }
 
