@@ -2,43 +2,49 @@ package com.plane.cities;
 
 import com.plane.airport.Airport;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Cities {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long cityId;
 
-    private String name;
+    private String cityName;
     private String country;
 
-    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL)
-    private List<Airport> airports;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Airport> airports = new ArrayList<Airport>();
+    private String population;
 
     public Cities() {
 
     }
 
-    public Cities(String name, String country) {
-        this.name = name;
+    public Cities(String cityName, String country, List<Airport> airports, String population) {
+        this.cityName = cityName;
         this.country = country;
+        this.airports = airports;
+        this.population = population;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCityId() {
+        return cityId;
     }
 
-    public void setId(Long cityId) {
-        this.id = id;
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
     }
 
-    public String getName() {
-        return name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
     public String getCountry() {
@@ -55,5 +61,24 @@ public class Cities {
 
     public void setAirports(List<Airport> airports) {
         this.airports = airports;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
+    }
+
+    @Override
+    public String toString() {
+        return "City {" +
+                "Cities Id:" + cityId +
+                "City:" + cityName +
+                "Country:" + country +
+                "Airports" + airports +
+                "Population" + population +
+                "}";
     }
 }

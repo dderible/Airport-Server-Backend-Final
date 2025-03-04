@@ -3,42 +3,52 @@ package com.plane.cities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 public class CitiesService {
+
     @Autowired
     private CitiesRepository citiesRepository;
 
-    public List<Cities> getAllCities() {
+    public Cities addCity(Cities cities) {
+        return citiesRepository.save(cities);
+    }
+
+    public Iterable<Cities> getAllCities() {
         return citiesRepository.findAll();
     }
 
-    public Cities getCityById(Long id) {
-        return citiesRepository.findById(id).orElse(null);
+    public Iterable<Cities> findByAirport(String name) {
+        return citiesRepository.findCityByAirports_Name(name);
     }
 
-    public Cities getCityByName(String name) {
-        return citiesRepository.findByName(name);
+    public Optional<Cities> getCityById(Long cityId) {
+        return citiesRepository.findById(cityId);
     }
 
-    public Cities saveCity(Cities city) {
-        return citiesRepository.save(city);
-    }
+    public Cities updateCity(Long cityId, Cities updatedCity) {
+        return citiesRepository.findById(cityId).map(city -> {
+            city.setCityName(updatedCity.getCityName());
+            city.setCountry(updatedCity.getCountry());
+            city.setAirports(updatedCity.getAirports());
 
-    public Cities updateCity(Long id, Cities cityDetails) {
-        Optional<Cities> existingCity = citiesRepository.findById(id);
-        if (existingCity.isPresent()) {
-            Cities city = existingCity.get();
-            city.setName(cityDetails.getName());
-            city.setCountry(cityDetails.getCountry());
             return citiesRepository.save(city);
-        }
-        return null;
+        }).orElseThrow(() -> new RuntimeException("City not found with id " + cityId));
     }
 
-    public void deleteCity(Long id) {
-        citiesRepository.deleteById(id);
+    public boolean deleteCity(Long cityId) {
+        if (citiesRepository.existsById(cityId)) {
+            citiesRepository.deleteById(cityId);
+        } else {
+            throw new RuntimeException("City not found with id " + cityId);
+        }
+        return false;
     }
+
+    public Cities findByCityName(String cityName) {
+        return citiesRepository.findByCityName(cityName);
+
+    }
+
 }
