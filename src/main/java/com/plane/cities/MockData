@@ -1,59 +1,74 @@
-{
-    "name": "St. John's",
-    "country": "Canada",
-    "airports": []
-}
 
-{
-    "name": "Montréal",
-    "country": "Canada",
-    "airports": []
-}
+    http://localhost:8080/addNewCity
 
-{
-    "name": "Toronto",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Toronto",
+        "country": "Canada",
+        "airports": [],
+        "population": "2,900,000"
+    }
 
-{
-    "name": "Vancouver",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Vancouver",
+        "country": "Canada",
+        "airports": [],
+        "population": "675,000"
+    }
 
-{
-    "name": "Calgary",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Montreal",
+        "country": "Canada",
+        "airports": [],
+        "population": "1,800,000"
+    }
 
-{
-    "name": "Edmonton",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Edmonton",
+        "country": "Canada",
+        "airports": [],
+        "population": "1,000,000"
+    }
 
-{
-    "name": "Winnipeg",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Calgary",
+        "country": "Canada",
+        "airports": [],
+        "population": "1,300,000"
+    }
 
-{
-    "name": "Quebec City",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Ottawa",
+        "country": "Canada",
+        "airports": [],
+        "population": "1,000,000"
+    }
 
-{
-    "name": "Halifax",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Winnipeg",
+        "country": "Canada",
+        "airports": [],
+        "population": "750,000"
+    }
 
-{
-    "name": "Ottawa",
-    "country": "Canada",
-    "airports": []
-}
+    {
+        "cityName": "Halifax",
+        "country": "Canada",
+        "airports": [],
+        "population": "450,000"
+    }
+
+    {
+        "cityName": "Regina",
+        "country": "Canada",
+        "airports": [],
+        "population": "230,000"
+    }
+
+    {
+        "cityName": "St. John's",
+        "country": "Canada",
+        "airports": [],
+        "population": "110,000"
+    }
+
+

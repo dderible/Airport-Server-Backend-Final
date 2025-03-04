@@ -1,52 +1,73 @@
-[
+
+    http://localhost:8080/addNewPassenger
+
     {
-        "name": "John Doe",
-        "email": "johndoe@example.com",
-        "airline": "Air Canada"
-    },
-    {
-        "name": "Alice Smith",
-        "email": "alicesmith@example.com",
-        "airline": "West Jet"
-    },
-    {
-        "name": "Michael Johnson",
-        "email": "michaelj@example.com",
-        "airline": "Porter Airlines"
-    },
-    {
-        "name": "Emily Brown",
-        "email": "emilybrown@example.com",
-        "airline": "Swoop"
-    },
-    {
-        "name": "David Wilson",
-        "email": "davidwilson@example.com",
-        "airline": "SunWing"
-    },
-    {
-        "name": "Sophia Martinez",
-        "email": "sophiam@example.com",
-        "airline": "Delta Airlines"
-    },
-    {
-        "name": "James Anderson",
-        "email": "jamesa@example.com",
-        "airline": "American Airlines"
-    },
-    {
-        "name": "Olivia White",
-        "email": "oliviawhite@example.com",
-        "airline": "Qatar Airways"
-    },
-    {
-        "name": "William Harris",
-        "email": "williamh@example.com",
-        "airline": "Emirates"
-    },
-    {
-        "name": "Isabella Clark",
-        "email": "isabellac@example.com",
-        "airline": "Spirit Airlines"
+        "passengerName": "John Smith",
+        "passengerAddress": "123 Main St, Toronto, ON",
+        "passengerPhone": "416-555-0123",
+        "aircraftId": { "aircraftId": 1 }
     }
-]
+
+    {
+        "passengerName": "Emma Johnson",
+        "passengerAddress": "456 Bay St, Vancouver, BC",
+        "passengerPhone": "604-555-0456",
+        "aircraftId": { "aircraftId": 2 }
+    }
+
+    {
+        "passengerName": "Michael Brown",
+        "passengerAddress": "789 Queen St, Montreal, QC",
+        "passengerPhone": "514-555-0789",
+        "aircraftId": { "aircraftId": 3 }
+    }
+
+    {
+        "passengerName": "Sophia Wilson",
+        "passengerAddress": "321 Jasper Ave, Edmonton, AB",
+        "passengerPhone": "780-555-0321",
+        "aircraftId": { "aircraftId": 4 }
+    }
+
+    {
+        "passengerName": "William Martinez",
+        "passengerAddress": "654 17th Ave, Calgary, AB",
+        "passengerPhone": "403-555-0654",
+        "aircraftId": { "aircraftId": 5 }
+    }
+
+    {
+        "passengerName": "Olivia Taylor",
+        "passengerAddress": "987 Bank St, Ottawa, ON",
+        "passengerPhone": "613-555-0987",
+        "aircraftId": { "aircraftId": 6 }
+    }
+
+    {
+        "passengerName": "James Anderson",
+        "passengerAddress": "135 Portage Ave, Winnipeg, MB",
+        "passengerPhone": "204-555-0135",
+        "aircraftId": { "aircraftId": 7 }
+    }
+
+    {
+        "passengerName": "Charlotte Thomas",
+        "passengerAddress": "246 Spring Garden Rd, Halifax, NS",
+        "passengerPhone": "902-555-0246",
+        "aircraftId": { "aircraftId": 8 }
+    }
+
+    {
+        "passengerName": "Benjamin White",
+        "passengerAddress": "357 Broad St, Regina, SK",
+        "passengerPhone": "306-555-0357",
+        "aircraftId": { "aircraftId": 9 }
+    }
+
+    {
+        "passengerName": "Amelia Harris",
+        "passengerAddress": "468 Water St, St. John's, NL",
+        "passengerPhone": "709-555-0468",
+        "aircraftId": { "aircraftId": 10 }
+    }
+

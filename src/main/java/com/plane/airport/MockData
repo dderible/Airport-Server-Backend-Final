@@ -1,59 +1,93 @@
-{
-    "name": "St.John's International Airport",
-    "code": "YYT",
-    "city": "St. John's"
-}
 
-{
-    "name": "Toronto Pearson International Airport",
-    "code": "YYZ",
-    "city": "Toronto"
-}
+    http://localhost:8080/addNewAirport
 
-{
-    "name": "Vancouver International Airport",
-    "code": "YVR",
-    "city": "Vancouver"
-}
+    {
+        "name": "Toronto Pearson International Airport",
+        "code": "YYZ",
+        "cityName": {
+            "cityName": "Toronto",
+            "country": "Canada"
+        }
+     }
 
-{
-    "name": "Edmonton International Airport",
-    "code": "YEG",
-    "city": "Edmonton"
-}
+    {
+         "name": "Vancouver International Airport",
+         "code": "YVR",
+         "cityName": {
+             "cityName": "Vancouver",
+             "country": "Canada"
+         }
+     }
 
-{
-    "name": "Winnipeg Richardson International Airport",
-    "code": "YWG",
-    "city": "Winnipeg"
-}
+    {
+         "name": "Montréal-Pierre Elliott Trudeau International Airport",
+         "code": "YUL",
+         "cityName": {
+             "cityName": "Montreal",
+             "country": "Canada"
+         }
+     }
 
-{
-    "name": "Montréal-Pierre Elliott Trudeau International Airport",
-    "code": "YUL",
-    "city": "Montreal"
-}
+    {
+         "name": "Edmonton International Airport",
+         "code": "YEG",
+         "cityName": {
+             "cityName": "Edmonton",
+             "country": "Canada"
+         }
+     }
 
-{
-    "name": "Calgary International Airport",
-    "code": "YYC",
-    "city": "Calgary"
-}
+    {
+         "name": "Calgary International Airport",
+         "code": "YYC",
+         "cityName": {
+             "cityName": "Calgary",
+             "country": "Canada"
+         }
+     }
 
-{
-    "name": "Halifax Stanfield International Airport",
-    "code": "YHZ",
-    "city": "Halifax"
-}
+    {
+          "name": "Ottawa Macdonald-Cartier International Airport",
+          "code": "YOW",
+          "cityName": {
+              "cityName": "Ottawa",
+              "country": "Canada"
+          }
+     }
 
-{
-    "name": "Ottawa International Airport",
-    "code": "YOW",
-    "city": "Ottawa"
-}
+    {
+        "name": "Winnipeg Richardson International Airport",
+        "code": "YWG",
+        "cityName": {
+            "cityName": "Winnipeg",
+            "country": "Canada"
+        }
+     }
 
-{
-    "name": "Québec City Jean Lesage International Airport",
-    "code": "YQB",
-    "city": "Quebec City"
-}
+    {
+         "name": "Halifax Stanfield International Airport",
+         "code": "YHZ",
+         "cityName": {
+             "cityName": "Halifax",
+             "country": "Canada"
+         }
+     }
+
+    {
+          "name": "Regina International Airport",
+          "code": "YQR",
+          "cityName": {
+              "cityName": "Regina",
+              "country": "Canada"
+          }
+     }
+
+    {
+           "name": "St.John's International Airport",
+           "code": "YYT",
+           "cityName": {
+               "cityName": "St.John's",
+               "country": "Canada"
+           }
+     }
+

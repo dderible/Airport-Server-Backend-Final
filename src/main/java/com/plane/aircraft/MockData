@@ -1,59 +1,93 @@
-{
-    "model": "AC320",
-    "airline": "Air Canada",
-    "passengers":
-}
 
-{
-    "model": "WJ129",
-    "airline": "West Jet",
-    "passengers":
-}
+    http://localhost:8080/addNewAircraft
 
-{
-    "model": "PO343",
-    "airline": "Porter Airlines",
-    "passengers":
-}
+    {
+        "model": "Boeing 737",
+        "airlineName": "Air Canada",
+        "numberOfPassengers": 160,
+        "airportId": {
+            "airportId": 1
+        }
+    }
 
-{
-    "model": "SW872",
-    "airline": "Swoop",
-    "passengers":
-}
+    {
+        "model": "Airbus A320",
+        "airlineName": "WestJet",
+        "numberOfPassengers": 180,
+        "airportId": {
+            "airportId": 2
+        }
+    }
 
-{
-    "model": "SW465",
-    "airline": "SunWing",
-    "passengers":
-}
+    {
+       "model": "Bombardier Q400",
+       "airlineName": "Porter Airlines",
+       "numberOfPassengers": 78,
+       "airportId": {
+         "airportId": 3
+       }
+    }
 
-{
-    "model": "DA342",
-    "airline": "Delta Airlines",
-    "passengers":
-}
+    {
+       "model": "Boeing 787",
+       "airlineName": "Air Canada",
+       "numberOfPassengers": 298,
+       "airportId": {
+         "airportId": 4
+       }
+    }
 
-{
-    "model": "AA432",
-    "airline": "American Airlines",
-    "passengers":
-}
+    {
+       "model": "Embraer E175",
+       "airlineName": "Flair Airlines",
+       "numberOfPassengers": 88,
+       "airportId": {
+         "airportId": 5
+       }
+    }
 
-{
-    "model": "QA983",
-    "airline": "Qatar Airways",
-    "passengers":
-}
+    {
+       "model": "Airbus A321",
+       "airlineName": "Air Transat",
+       "numberOfPassengers": 200,
+       "airportId": {
+         "airportId": 6
+       }
+    }
 
-{
-    "model": "EM143",
-    "airline": "Emirates",
-    "passengers":
-}
+    {
+       "model": "Boeing 777",
+       "airlineName": "Air Canada",
+       "numberOfPassengers": 450,
+       "airportId": {
+         "airportId": 7
+       }
+    }
 
-{
-    "model": "SA465",
-    "airline": "Spirit Airlines",
-    "passengers":
-}
+    {
+       "model": "De Havilland Dash 8",
+       "airlineName": "WestJet Encore",
+       "numberOfPassengers": 78,
+       "airportId": {
+         "airportId": 8
+       }
+    }
+
+    {
+       "model": "Boeing 767",
+       "airlineName": "Cargojet",
+       "numberOfPassengers": 0,
+       "airportId": {
+         "airportId": 9
+       }
+    }
+
+    {
+       "model": "CRJ-900",
+       "airlineName": "Jazz Aviation",
+       "numberOfPassengers": 90,
+       "airportId": {
+         "airportId": 10
+       }
+    }
+
