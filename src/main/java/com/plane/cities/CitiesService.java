@@ -32,6 +32,7 @@ public class CitiesService {
             city.setCityName(updatedCity.getCityName());
             city.setCountry(updatedCity.getCountry());
             city.setAirports(updatedCity.getAirports());
+            city.setPopulation(updatedCity.getPopulation());
 
             return citiesRepository.save(city);
         }).orElseThrow(() -> new RuntimeException("City not found with id " + cityId));

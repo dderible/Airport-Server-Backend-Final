@@ -30,9 +30,9 @@ public class CitiesController {
         return cities.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/updateCity/{id}")
-    public ResponseEntity<Cities> updateCity(@PathVariable("id") Long id, @RequestBody Cities cityDetails) {
-        Cities updatedCity = citiesService.updateCity(id, cityDetails);
+    @PutMapping("/updateCity/{cityId}")
+    public ResponseEntity<Cities> updateCity(@PathVariable("cityId") Long cityId, @RequestBody Cities cityDetails) {
+        Cities updatedCity = citiesService.updateCity(cityId, cityDetails);
         return updatedCity != null ? ResponseEntity.ok(updatedCity) : ResponseEntity.notFound().build();
     }
 

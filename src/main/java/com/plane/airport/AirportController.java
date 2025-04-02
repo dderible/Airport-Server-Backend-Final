@@ -47,6 +47,15 @@ public class AirportController {
         return airport.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/getAirportsByCityId/{cityId}")
+    public ResponseEntity<Iterable<Airport>> getAirportsByCity(@PathVariable Long cityId) {
+        Iterable<Airport> airports = airportService.getAirportsByCityId(cityId);
+        if (airports.iterator().hasNext()) {
+            return ResponseEntity.ok(airports);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @PutMapping("/updateAirportById/{airportId}")
     public ResponseEntity<Airport> updateAirport(@PathVariable Long airportId, @RequestBody Airport updatedAirport) {
         Optional<Airport> airport = airportService.updateAirport(airportId, updatedAirport);
@@ -57,15 +66,6 @@ public class AirportController {
     public ResponseEntity<Void> deleteAirport(@PathVariable Long airportId) {
         if (airportService.deleteAirport(airportId)) {
             return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
-    }
-
-    @GetMapping("/getAirportsByCityId/{cityId}")
-    public ResponseEntity<Iterable<Airport>> getAirportsByCity(@PathVariable Long cityId) {
-        Iterable<Airport> airports = airportService.getAirportsByCityId(cityId);
-        if (airports.iterator().hasNext()) {
-            return ResponseEntity.ok(airports);
         }
         return ResponseEntity.notFound().build();
     }
