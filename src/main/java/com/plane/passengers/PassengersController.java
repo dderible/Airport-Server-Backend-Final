@@ -40,26 +40,26 @@ public class PassengersController {
         return passengersService.addPassenger(passenger);
     }
 
-    @GetMapping("/findByPassengerID/{passengerID}")
-    public ResponseEntity<Passengers> findByPassengerID(@PathVariable Long passengerID) {
-        Optional<Passengers> passengers = passengersService.findByPassengerID(passengerID);
+    @GetMapping("/findByPassengerID/{passengerId}")
+    public ResponseEntity<Passengers> findByPassengerId(@PathVariable Long passengerId) {
+        Optional<Passengers> passengers = passengersService.findByPassengerId(passengerId);
         return passengers.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/getAircraftForPassenger")
-    public Iterable<Passengers> getAircraftForPassenger(@RequestParam("ID") Long passengerID) {
-        return passengersService.findByAircraftID(passengerID);
+    public Iterable<Passengers> getAircraftForPassenger(@RequestParam("ID") Long passengerId) {
+        return passengersService.findByAircraftId(passengerId);
     }
 
-    @PutMapping("/updatePassengerByID/{passengerID}")
-    public ResponseEntity<Passengers> updatePassenger(@PathVariable Long passengerID,@RequestBody Passengers updatedPassenger) {
-        Optional<Passengers> passengers = Optional.ofNullable(passengersService.updatePassenger(passengerID, updatedPassenger));
+    @PutMapping("/updatePassengerById/{passengerId}")
+    public ResponseEntity<Passengers> updatePassenger(@PathVariable Long passengerId,@RequestBody Passengers updatedPassenger) {
+        Optional<Passengers> passengers = Optional.ofNullable(passengersService.updatePassenger(passengerId, updatedPassenger));
         return passengers.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/deletePassengerByID/{passengerID}")
-    public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerID) {
-        if(passengersService.deletePassenger(passengerID)) {
+    @DeleteMapping("/deletePassengerById/{passengerId}")
+    public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerId) {
+        if(passengersService.deletePassenger(passengerId)) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();

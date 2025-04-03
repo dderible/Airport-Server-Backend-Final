@@ -21,7 +21,7 @@ public class Aircraft {
     private Airport airportId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Passengers passengerID;
+    private Passengers passengerId;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Airport> airports = new ArrayList<Airport>();
@@ -90,11 +90,11 @@ public class Aircraft {
     }
 
     public Passengers getPassengerID() {
-        return passengerID;
+        return passengerId;
     }
 
-    public void setPassengerID(Passengers passengerID) {
-        this.passengerID = passengerID;
+    public void setPassengerID(Passengers passengerId) {
+        this.passengerId = passengerId;
     }
 
     public List<Passengers> getPassengers() {

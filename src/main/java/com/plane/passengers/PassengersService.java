@@ -18,30 +18,30 @@ public class PassengersService {
         return passengersRepository.findAll();
     }
 
-    public Optional<Passengers> findByPassengerID(Long passengerID) {
-        return passengersRepository.findByPassengerID(passengerID);
+    public Optional<Passengers> findByPassengerId(Long passengerId) {
+        return passengersRepository.findByPassengerId(passengerId);
     }
 
-    public Iterable<Passengers> findByAircraftID(Long aircraftID) {
-        return passengersRepository.findPassengerByAircraftId_aircraftId(aircraftID);
+    public Iterable<Passengers> findByAircraftId(Long aircraftId) {
+        return passengersRepository.findPassengerByAircraftId_aircraftId(aircraftId);
     }
 
-    public Passengers updatePassenger(Long passengerID, Passengers updatedPassenger) {
-        return passengersRepository.findByPassengerID(passengerID).map(passenger -> {
+    public Passengers updatePassenger(Long passengerId, Passengers updatedPassenger) {
+        return passengersRepository.findByPassengerId(passengerId).map(passenger -> {
             passenger.setPassengerName(updatedPassenger.getPassengerName());
             passenger.setPassengerAddress(updatedPassenger.getPassengerAddress());
             passenger.setPassengerPhone(updatedPassenger.getPassengerPhone());
             passenger.setAircraftId(updatedPassenger.getAircraftId());
 
             return passengersRepository.save(passenger);
-        }).orElseThrow(() -> new RuntimeException("Passenger not found with id " + passengerID));
+        }).orElseThrow(() -> new RuntimeException("Passenger not found with id " + passengerId));
     }
 
-    public boolean deletePassenger(Long passengerID) {
-        if(passengersRepository.existsById(passengerID)) {
-            passengersRepository.deleteById(passengerID);
+    public boolean deletePassenger(Long passengerId) {
+        if(passengersRepository.existsById(passengerId)) {
+            passengersRepository.deleteById(passengerId);
         } else {
-            throw new RuntimeException("Passenger not found with id " + passengerID);
+            throw new RuntimeException("Passenger not found with id " + passengerId);
         }
         return false;
     }

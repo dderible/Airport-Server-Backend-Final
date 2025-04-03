@@ -49,8 +49,8 @@ public class AircraftController {
 
     // Get an aircraft by ID
     @GetMapping("/getAircraftById/{id}")
-    public ResponseEntity<Aircraft> getAircraftById(@PathVariable Long id) {
-        Optional<Aircraft> aircraft = aircraftService.getAircraftById(id);
+    public ResponseEntity<Aircraft> getAircraftById(@PathVariable Long aircraftId) {
+        Optional<Aircraft> aircraft = aircraftService.getAircraftById(aircraftId);
         return aircraft.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 

@@ -25,12 +25,12 @@ public class AircraftService {
         return aircraftRepository.findAll();
     }
 
-    public Optional<Aircraft> getAircraftById(Long id) {
-        return aircraftRepository.findById(id);
+    public Optional<Aircraft> getAircraftById(Long aircraftId) {
+        return aircraftRepository.findById(aircraftId);
     }
 
-    public Optional<Aircraft> updateAircraft(Long id, Aircraft updatedAircraft) {
-        return aircraftRepository.findById(id).map(aircraft -> {
+    public Optional<Aircraft> updateAircraft(Long aircraftId, Aircraft updatedAircraft) {
+        return aircraftRepository.findById(aircraftId).map(aircraft -> {
             aircraft.setType(updatedAircraft.getType());
             aircraft.setAirlineName(updatedAircraft.getAirlineName());
             aircraft.setNumberOfPassengers(updatedAircraft.getNumberOfPassengers());
@@ -38,9 +38,9 @@ public class AircraftService {
         });
     }
 
-    public boolean deleteAircraft(Long id) {
-        if (aircraftRepository.existsById(id)) {
-            aircraftRepository.deleteById(id);
+    public boolean deleteAircraft(Long aircraftId) {
+        if (aircraftRepository.existsById(aircraftId)) {
+            aircraftRepository.deleteById(aircraftId);
             return true;
         }
         return false;

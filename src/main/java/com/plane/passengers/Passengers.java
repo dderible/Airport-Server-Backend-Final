@@ -8,7 +8,7 @@ public class Passengers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long passengerID;
+    private Long passengerId;
     private String passengerName;
     private String passengerAddress;
     private String passengerPhone;
@@ -20,11 +20,11 @@ public class Passengers {
 
     }
 
-    public Long getPassengerID() {
-        return passengerID;
+    public Long getPassengerId() {
+        return passengerId;
     }
-    public void setPassengerID(Long passengerID) {
-        this.passengerID = passengerID;
+    public void setPassengerId(Long passengerId) {
+        this.passengerId = passengerId;
     }
     public String getPassengerName() {
         return passengerName;
@@ -57,7 +57,7 @@ public class Passengers {
 
     public String toString() {
         return "Passenger: " + passengerName +
-                ", ID:" + passengerID +
+                ", ID:" + passengerId +
                 ", Address: " + passengerAddress +
                 ", Phone: " + passengerPhone;
     }
