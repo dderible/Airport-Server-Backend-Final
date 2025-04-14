@@ -1,0 +1,51 @@
+http://localhost:8080/addGate
+
+{
+    "terminal": "A",
+    "number": "1"
+}
+
+{
+    "terminal": "B",
+    "number": "2"
+}
+
+{
+    "terminal": "C",
+    "number": "3"
+}
+
+{
+    "terminal": "D",
+    "number": "4"
+}
+
+{
+    "terminal": "E",
+    "number": "5"
+}
+
+{
+    "terminal": "F",
+    "number": "6"
+}
+
+{
+    "terminal": "G",
+    "number": "7"
+}
+
+{
+    "terminal": "H",
+    "number": "8"
+}
+
+{
+    "terminal": "I",
+    "number": "9"
+}
+
+{
+    "terminal": "J",
+    "number": 10
+}
