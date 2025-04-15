@@ -2,9 +2,14 @@ package com.plane.airport;
 
 import com.plane.cities.Cities;
 import com.plane.cities.CitiesService;
+import com.plane.flights.Flight;
+import com.plane.flights.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,6 +21,8 @@ public class AirportController {
 
     @Autowired
     private CitiesService citiesService;
+    @Autowired
+    private FlightService flightService;
 
     @PostMapping("/addNewAirport")
     public Airport addNewAirport(@RequestBody Airport airport) {
@@ -68,5 +75,36 @@ public class AirportController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/{airportId}/add-flight-from-airport/{flightId}")
+    public ResponseEntity<String> addFlight(@PathVariable Long airportId, @PathVariable Long flightId) {
+        Airport airport = airportService.findByAirportId(airportId);
+        Flight flight = flightService.findByFlightId(flightId);
+
+        if (airport == null || flight == null) {
+            return new ResponseEntity<>("ERROR: Airport or Flight not found.", HttpStatus.NOT_FOUND);
+        }
+
+        if (airport.getFlightList().contains(flight)) {
+            return new ResponseEntity<>("ERROR: Flight already exists in Flight List.", HttpStatus.CONFLICT);
+        }
+
+        airport.getFlightList().add(flight);
+        airportService.addAirport(airport);
+
+        return new ResponseEntity<>("Successfully added Flight to Airline's List!", HttpStatus.CREATED);
+    }
+
+    @GetMapping("/airport-arrivals")
+    public ResponseEntity<List<Flight>> getAirportArrivals(String flightOrigin) {
+        List<Flight> arrivals = flightService.getByFlightOrigin(flightOrigin);
+        return ResponseEntity.ok(arrivals);
+    }
+
+    @GetMapping("/airport-departures")
+    public ResponseEntity<List<Flight>> getAirportDepartures(String flightDestination) {
+        List<Flight> departures = flightService.getByFlightDestination(flightDestination);
+        return ResponseEntity.ok(departures);
     }
 }
