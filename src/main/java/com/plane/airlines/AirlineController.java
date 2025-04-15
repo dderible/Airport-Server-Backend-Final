@@ -52,7 +52,7 @@ public class AirlineController {
         return ResponseEntity.ok(airlineService.getByAirlineId(airlineId));
     }
 
-    @PostMapping("/{airlineId}/add-flight/{flightId}")
+    @PostMapping("/{airlineId}/add-flight-from-airline/{flightId}")
     public ResponseEntity<String> addFlight(@PathVariable Long airlineId, @PathVariable Long flightId) {
         Airline airline = airlineService.findByAirlineId(airlineId);
         Flight flight = flightService.findByFlightId(flightId);
@@ -68,7 +68,7 @@ public class AirlineController {
         airline.getFlightList().add(flight);
         airlineService.createAirline(airline);
 
-        return new ResponseEntity<>("Successfully added Flight to Airline's List", HttpStatus.CREATED);
+        return new ResponseEntity<>("Successfully added Flight to Airline's List!", HttpStatus.CREATED);
     }
 
     @GetMapping("/getAllFlightsForAirlineById/{airlineId}")

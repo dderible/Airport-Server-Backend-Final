@@ -1,9 +1,11 @@
 package com.plane.airport;
 
 import com.plane.cities.CitiesRepository;
+import com.plane.flights.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,6 +56,12 @@ public class AirportService {
 
     public Airport findByAirportId(Long airportId) {
         return airportRepository.findByAirportId(airportId);
+    }
+
+    public Iterable<Flight> listFlightsByAirportId(Long airportId) {
+        return airportRepository.findById(airportId)
+                .map(Airport::getFlightList)
+                .orElse(Collections.emptyList());
     }
 }
 

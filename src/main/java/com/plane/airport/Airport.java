@@ -4,6 +4,7 @@ import com.plane.cities.Cities;
 import com.plane.aircraft.Aircraft;
 
 
+import com.plane.flights.Flight;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -25,13 +26,20 @@ public class Airport {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Aircraft> aircrafts = new ArrayList<>();
 
-    public Airport() {}
+    @OneToMany
+    private List<Flight> flightList;
 
     public Airport(String name, String code, Cities cityName) {
         this.name = name;
         this.code = code;
         this.cityName= cityName;
+        this.flightList = new ArrayList<>();
     }
+
+    public Airport() {
+        this.flightList = new ArrayList<>();
+    }
+
 
     public Long getAirportId() {
         return airportId;
@@ -67,6 +75,22 @@ public class Airport {
 
     public List<Aircraft> getAircrafts() {
         return aircrafts;
+    }
+
+    public List<Flight> getFlightList() {
+        return flightList;
+    }
+
+    public void setFlightList(List<Flight> flightList) {
+        this.flightList = flightList;
+    }
+
+    public void addFlight(Flight flight) {
+        this.flightList.add(flight);
+    }
+
+    public void removeFlight(Flight flight) {
+        this.flightList.remove(flight);
     }
 
     public void setAircrafts(List<Aircraft> aircrafts) {
