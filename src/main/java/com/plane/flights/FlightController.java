@@ -1,5 +1,8 @@
 package com.plane.flights;
 
+import com.plane.gates.Gate;
+import com.plane.gates.GateRepository;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +15,14 @@ public class FlightController {
 
     private final FlightService flightService;
 
-    public FlightController(FlightService flightService) {
+    private final GateRepository gateRepository;
+
+    public FlightController(FlightService flightService, GateRepository gateRepository) {
         this.flightService = flightService;
+        this.gateRepository = gateRepository;
     }
 
-    @GetMapping
+    @GetMapping("/get-all-flights")
     public ResponseEntity<List<Flight>> getAllFlights() {
         return ResponseEntity.ok(flightService.getAllFlights());
     }
@@ -26,10 +32,19 @@ public class FlightController {
         return ResponseEntity.ok(flightService.findByFlightId(flightid));
     }
 
-    @PostMapping
+    @PostMapping("/create-flight")
     public ResponseEntity<Flight> createFlight(@RequestBody Flight flight) {
-        Flight NewFlight = flightService.createFlight(flight);
-        return new ResponseEntity<>(NewFlight, HttpStatus.CREATED);
+        try {
+            Gate airlineGate = gateRepository.findByTerminal(gate.flight.getGateByTerminal());
+            if (airlineGate == null) {
+                gateRepository.save(flight.getGate());
+            }
+
+            Flight NewFlight = flightService.createFlight(flight);
+            return new ResponseEntity<>(NewFlight, HttpStatus.CREATED);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @DeleteMapping("/{flightid}")

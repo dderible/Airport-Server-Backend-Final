@@ -17,7 +17,75 @@ public class Flight {
     private String flightAirline;
 
     @OneToOne
-    private Gate gate;
+    Gate gate;
+
+    public Flight(Long flightId, String flightSeat, String flightOrigin, String flightDestination, String flightAirline, Gate gate) {
+        this.flightId = flightId;
+        this.flightSeat = flightSeat;
+        this.flightOrigin = flightOrigin;
+        this.flightDestination = flightDestination;
+        this.flightAirline = flightAirline;
+        this.gate = gate;
+    }
+
+    public Flight(String flightSeat, String flightOrigin, String flightDestination, String flightAirline) {
+        this.flightSeat = flightSeat;
+        this.flightOrigin = flightOrigin;
+        this.flightDestination = flightDestination;
+        this.flightAirline = flightAirline;
+    }
+
+    public Flight() {
+
+    }
+
+    public Long getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(Long flightId) {
+        this.flightId = flightId;
+    }
+
+    public String getFlightSeat() {
+        return flightSeat;
+    }
+
+    public void setFlightSeat(String flightSeat) {
+        this.flightSeat = flightSeat;
+    }
+
+    public String getFlightOrigin() {
+        return flightOrigin;
+    }
+
+    public void setFlightOrigin(String flightOrigin) {
+        this.flightOrigin = flightOrigin;
+    }
+
+    public String getFlightDestination() {
+        return flightDestination;
+    }
+
+    public void setFlightDestination(String flightDestination) {
+        this.flightDestination = flightDestination;
+    }
+
+    public String getFlightAirline() {
+        return flightAirline;
+    }
+
+    public void setFlightAirline(String flightAirline) {
+        this.flightAirline = flightAirline;
+    }
+
+    public Gate getGate() {
+        return gate;
+    }
+
+    public void setGate(Gate gate) {
+        this.gate = gate;
+    }
 
     @Override
     public String toString() {
