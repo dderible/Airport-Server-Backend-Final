@@ -47,4 +47,13 @@ public class Gate {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    @Override
+    public String toString() {
+        return "Gate{" +
+                "gateId=" + gateId +
+                ", terminal='" + terminal + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }
