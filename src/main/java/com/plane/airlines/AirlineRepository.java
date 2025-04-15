@@ -9,4 +9,6 @@ import java.util.List;
 public interface AirlineRepository extends JpaRepository<Airline, Long> {
     List<Airline> findByAirlineId(Long airlineId);
     List<Airline> findByAirlineName(String airlineName);
+
+    // .
 }

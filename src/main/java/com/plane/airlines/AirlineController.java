@@ -47,4 +47,6 @@ public class AirlineController {
     public ResponseEntity<List<Airline>> getByAirlineId(@RequestParam Long airlineId) {
         return ResponseEntity.ok(airlineService.getByAirlineId(airlineId));
     }
+
+    // .
 }
