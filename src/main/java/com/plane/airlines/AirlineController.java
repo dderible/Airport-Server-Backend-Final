@@ -16,24 +16,24 @@ public class AirlineController {
         this.airlineService = airlineService;
     }
 
-    @GetMapping
+    @GetMapping("/get-all-airlines")
     public ResponseEntity<List<Airline>> getAllAirlines() {
         return ResponseEntity.ok(airlineService.getAllAirlines());
     }
 
-    @GetMapping("/{airlineid}")
-    public ResponseEntity<Airline> getAirlineById(@PathVariable long airlineId) {
+    @GetMapping("/{airlineId}")
+    public ResponseEntity<Airline> getAirlineById(@PathVariable Long airlineId) {
         return ResponseEntity.ok(airlineService.findByAirlineId(airlineId));
     }
 
-    @PostMapping
+    @PostMapping("/create-airline")
     public ResponseEntity<Airline> createAirline(@RequestBody Airline airline) {
         Airline newAirline = airlineService.createAirline(airline);
         return new ResponseEntity<>(newAirline, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{airlineid}")
-    public ResponseEntity<Void> deleteAirline(@PathVariable long airlineId) {
+    @DeleteMapping("/{airlineId}")
+    public ResponseEntity<Void> deleteAirline(@PathVariable Long airlineId) {
         airlineService.deleteAirline(airlineId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

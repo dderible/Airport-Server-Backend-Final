@@ -48,4 +48,15 @@ public class FlightService {
     public List<Flight> getByFlightAirline(String flightAirline) {
         return flightRepository.findByFlightAirline(flightAirline);
     }
+
+    public Flight updateFlight(Long flightId, Flight flightDetails) {
+        Flight flight = flightRepository.findByFlightId(flightId)
+                .orElseThrow(() -> new EntityNotFoundException("ERROR: No Flight with id: " + flightId + " exists."));
+        flight.setFlightSeat(flightDetails.getFlightSeat());
+        flight.setFlightDestination(flightDetails.getFlightDestination());
+        flight.setFlightOrigin(flightDetails.getFlightOrigin());
+        flight.setFlightAirline(flightDetails.getFlightAirline());
+
+        return flightRepository.save(flight);
+    }
 }

@@ -27,15 +27,15 @@ public class FlightController {
         return ResponseEntity.ok(flightService.getAllFlights());
     }
 
-    @GetMapping("/{flightid}")
-    public ResponseEntity<Flight> getFlightById(@PathVariable Long flightid) {
-        return ResponseEntity.ok(flightService.findByFlightId(flightid));
+    @GetMapping("/{flightId}")
+    public ResponseEntity<Flight> getFlightById(@PathVariable Long flightId) {
+        return ResponseEntity.ok(flightService.findByFlightId(flightId));
     }
 
     @PostMapping("/create-flight")
     public ResponseEntity<Flight> createFlight(@RequestBody Flight flight) {
         try {
-            Gate airlineGate = gateRepository.findByTerminal(gate.flight.getGateByTerminal());
+            Gate airlineGate = gateRepository.findByTerminal(flight.gate.getTerminal());
             if (airlineGate == null) {
                 gateRepository.save(flight.getGate());
             }
@@ -47,9 +47,9 @@ public class FlightController {
         }
     }
 
-    @DeleteMapping("/{flightid}")
-    public ResponseEntity<Flight> deleteFlight(@PathVariable Long flightid) {
-        flightService.deleteFlight(flightid);
+    @DeleteMapping("/{flightId}")
+    public ResponseEntity<Flight> deleteFlight(@PathVariable Long flightId) {
+        flightService.deleteFlight(flightId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
