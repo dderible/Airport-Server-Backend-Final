@@ -1,5 +1,6 @@
 package com.plane.flights;
 
+import com.plane.aircraft.Aircraft;
 import com.plane.gates.Gate;
 import jakarta.persistence.*;
 
@@ -19,13 +20,17 @@ public class Flight {
     @OneToOne
     Gate gate;
 
-    public Flight(Long flightId, String flightSeat, String flightOrigin, String flightDestination, String flightAirline, Gate gate) {
+    @OneToOne
+    Aircraft aircraft;
+
+    public Flight(Long flightId, String flightSeat, String flightOrigin, String flightDestination, String flightAirline, Gate gate, Aircraft aircraft) {
         this.flightId = flightId;
         this.flightSeat = flightSeat;
         this.flightOrigin = flightOrigin;
         this.flightDestination = flightDestination;
         this.flightAirline = flightAirline;
         this.gate = gate;
+        this.aircraft = aircraft;
     }
 
     public Flight(String flightSeat, String flightOrigin, String flightDestination, String flightAirline) {
@@ -87,6 +92,14 @@ public class Flight {
         this.gate = gate;
     }
 
+    public Aircraft getAircraft() {
+        return aircraft;
+    }
+
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
+    }
+
     @Override
     public String toString() {
         return "Flight{" +
@@ -96,6 +109,7 @@ public class Flight {
                 ", flightDestination='" + flightDestination + '\'' +
                 ", flightAirline='" + flightAirline + '\'' +
                 ", gate=" + gate +
+                ", aircraft=" + aircraft +
                 '}';
     }
 }

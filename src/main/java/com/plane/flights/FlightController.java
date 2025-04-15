@@ -1,5 +1,6 @@
 package com.plane.flights;
 
+// ADD: import com.plane.aircraft.AircraftRepository;
 import com.plane.gates.Gate;
 import com.plane.gates.GateRepository;
 
@@ -17,9 +18,12 @@ public class FlightController {
 
     private final GateRepository gateRepository;
 
-    public FlightController(FlightService flightService, GateRepository gateRepository) {
+    // ADD: private final AircraftRepository aircraftRepository;
+
+    public FlightController(FlightService flightService, GateRepository gateRepository) { // AircraftRepository aircraftRepository) {
         this.flightService = flightService;
         this.gateRepository = gateRepository;
+        // ADD: this.aircraftRepository = aircraftRepository;
     }
 
     @GetMapping("/get-all-flights")

@@ -77,6 +77,16 @@ public class Airline {
         this.flightList.remove(flight);
     }
 
+    @Override
+    public String toString() {
+        return "Airline{" +
+                "airlineId=" + airlineId +
+                ", airlineName='" + airlineName + '\'' +
+                ", originCountry='" + originCountry + '\'' +
+                ", flightList=" + flightList +
+                '}';
+    }
+
     // TBD: reminder for myself to check if we need function to
     // actually register a passenger to an airline
 }
