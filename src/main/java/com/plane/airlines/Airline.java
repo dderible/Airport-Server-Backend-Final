@@ -13,5 +13,5 @@ public class Airline {
     private String airlineName;
 
     // TBD: reminder for myself to check if we need function to
-    // actually register a passenger to an airline.
+    // actually register a passenger to an airline
 }

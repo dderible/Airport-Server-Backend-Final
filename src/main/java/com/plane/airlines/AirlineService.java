@@ -22,7 +22,7 @@ public class AirlineService {
         return airlineRepository.save(airline);
     }
 
-    // errors for some reason idk, fix tmrw.
+    // errors for some reason idk, fix tmrw
     public Airline findByAirlineId(Long airlineId) {
         return airlineRepository.findById(airlineId);
             .orElseThrow(() -> new EntityNotFoundException("ERROR: No Airline with id: " + airlineId + " exists."));
