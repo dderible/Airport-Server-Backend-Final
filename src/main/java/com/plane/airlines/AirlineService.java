@@ -1,12 +1,11 @@
 package com.plane.airlines;
 
-import com.plane.airlines.Airline;
-import com.plane.airlines.AirlineRepository;
-
+import com.plane.flights.Flight;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -42,5 +41,19 @@ public class AirlineService {
 
     public List<Airline> getByAirlineId(Long airlineId) {
         return airlineRepository.findByAirlineId(airlineId);
+    }
+
+    public Airline updateAirline(Long airlineId) {
+        Airline airline = airlineRepository.findByAirlineId(airlineId)
+                .orElseThrow(() -> new EntityNotFoundException("ERROR: No Flight with id: " + airlineId + " exists."));
+        airline.setAirlineName(airline.getAirlineName());
+        airline.setOriginCountry(airline.getOriginCountry());
+        return airlineRepository.save(airline);
+    }
+
+    public Iterable<Flight> listFlightsByAirlineId(Long airlineId) {
+        return airlineRepository.findById(airlineId)
+                .map(Airline::getFlightList)
+                .orElse(Collections.emptyList());
     }
 }
