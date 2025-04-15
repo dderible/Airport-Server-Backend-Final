@@ -1,5 +1,6 @@
 package com.plane.flights;
 
+import com.plane.gates.Gate;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,5 +16,18 @@ public class Flight {
     private String flightDestination;
     private String flightAirline;
 
-    // maybe?: switch airports function here?
+    @OneToOne
+    private Gate gate;
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "flightId=" + flightId +
+                ", flightSeat='" + flightSeat + '\'' +
+                ", flightOrigin='" + flightOrigin + '\'' +
+                ", flightDestination='" + flightDestination + '\'' +
+                ", flightAirline='" + flightAirline + '\'' +
+                ", gate=" + gate +
+                '}';
+    }
 }

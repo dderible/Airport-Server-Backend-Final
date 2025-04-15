@@ -20,7 +20,8 @@ public class FlightService {
     }
 
     public Flight findByFlightId(Long flightId) {
-        return flightRepository.findById(flightId).orElseThrow(EntityNotFoundException::new);
+        return flightRepository.findById(flightId)
+                .orElseThrow(() -> new EntityNotFoundException("ERROR: No Flight with id: " + flightId + " exists."));
     }
 
     public List<Flight> getAllFlights() {
