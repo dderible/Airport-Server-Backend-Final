@@ -20,6 +20,7 @@ public class Airport {
     private String name;
     private String code;
 
+    // Relationships
     @ManyToOne(cascade = CascadeType.ALL)
     private Cities cityName;
 
@@ -41,6 +42,7 @@ public class Airport {
     }
 
 
+    // Getters & Setters
     public Long getAirportId() {
         return airportId;
     }

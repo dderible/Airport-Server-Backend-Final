@@ -17,6 +17,7 @@ public class Aircraft {
     private String airlineName;
     private int numberOfPassengers;
 
+    // Relationships
     @ManyToOne(cascade = CascadeType.ALL)
     private Airport airportId;
 
@@ -41,6 +42,7 @@ public class Aircraft {
     }
 
 
+    // Getters & Setters
     public Long getAircraftId() {
         return aircraftId;
     }

@@ -17,6 +17,7 @@ public class Flight {
     private String flightDestination;
     private String flightAirline;
 
+    // Relationships
     @OneToOne
     Gate gate;
 
@@ -44,6 +45,7 @@ public class Flight {
 
     }
 
+    // Getters & Setters
     public Long getFlightId() {
         return flightId;
     }

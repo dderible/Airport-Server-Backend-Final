@@ -13,6 +13,7 @@ public class Passengers {
     private String passengerAddress;
     private String passengerPhone;
 
+    // Relationship
     @ManyToOne(cascade = CascadeType.MERGE)
     private Aircraft aircraftId;
 
@@ -20,27 +21,35 @@ public class Passengers {
 
     }
 
+    // Getters & Setters
     public Long getPassengerId() {
         return passengerId;
     }
+
     public void setPassengerId(Long passengerId) {
         this.passengerId = passengerId;
     }
+
     public String getPassengerName() {
         return passengerName;
     }
+
     public void setPassengerName(String passengerName) {
         this.passengerName = passengerName;
     }
+
     public String getPassengerAddress() {
         return passengerAddress;
     }
+
     public void setPassengerAddress(String passengerAddress) {
         this.passengerAddress = passengerAddress;
     }
+
     public String getPassengerPhone() {
         return passengerPhone;
     }
+
     public void setPassengerPhone(String passengerPhone) {
         this.passengerPhone = passengerPhone;
     }

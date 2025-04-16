@@ -24,6 +24,7 @@ public class Gate {
         this.number = number;
     }
 
+    // Getters & Setters
     public Long getGateId() {
         return gateId;
     }

@@ -24,6 +24,7 @@ public class AirportController {
     @Autowired
     private FlightService flightService;
 
+    // Create an airport
     @PostMapping("/addNewAirport")
     public Airport addNewAirport(@RequestBody Airport airport) {
 
@@ -42,18 +43,21 @@ public class AirportController {
         return airportService.addAirport(airport);
     }
 
+    // Retrieve a list of all airports
     @GetMapping("/listAllAirports")
     public ResponseEntity<Iterable<Airport>> getAllAirports() {
         airportService.getAllAirports();
         return ResponseEntity.ok().body(airportService.getAllAirports());
     }
 
+    // Search airports by ID
     @GetMapping("/getAirportById/{airportId}")
     public ResponseEntity<Airport> getAirportById(@PathVariable Long airportId) {
         Optional<Airport> airport = airportService.getAirportById(airportId);
         return airport.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Search airports by city ID
     @GetMapping("/getAirportsByCityId/{cityId}")
     public ResponseEntity<Iterable<Airport>> getAirportsByCity(@PathVariable Long cityId) {
         Iterable<Airport> airports = airportService.getAirportsByCityId(cityId);
@@ -63,12 +67,14 @@ public class AirportController {
         return ResponseEntity.notFound().build();
     }
 
+    // Update an airport
     @PutMapping("/updateAirportById/{airportId}")
     public ResponseEntity<Airport> updateAirport(@PathVariable Long airportId, @RequestBody Airport updatedAirport) {
         Optional<Airport> airport = airportService.updateAirport(airportId, updatedAirport);
         return airport.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Delete an airport
     @DeleteMapping("/deleteAirportById/{airportId}")
     public ResponseEntity<Void> deleteAirport(@PathVariable Long airportId) {
         if (airportService.deleteAirport(airportId)) {
@@ -77,6 +83,7 @@ public class AirportController {
         return ResponseEntity.notFound().build();
     }
 
+    // Add an airport to a flight
     @PostMapping("/{airportId}/add-flight-from-airport/{flightId}")
     public ResponseEntity<String> addFlight(@PathVariable Long airportId, @PathVariable Long flightId) {
         Airport airport = airportService.findByAirportId(airportId);
@@ -96,12 +103,14 @@ public class AirportController {
         return new ResponseEntity<>("Successfully added Flight to Airline's List!", HttpStatus.CREATED);
     }
 
+    // Retrieve a list of airport's arrivals
     @GetMapping("/airport-arrivals")
     public ResponseEntity<List<Flight>> getAirportArrivals(String flightOrigin) {
         List<Flight> arrivals = flightService.getByFlightOrigin(flightOrigin);
         return ResponseEntity.ok(arrivals);
     }
 
+    // Retrieve a list of airport's departures
     @GetMapping("/airport-departures")
     public ResponseEntity<List<Flight>> getAirportDepartures(String flightDestination) {
         List<Flight> departures = flightService.getByFlightDestination(flightDestination);

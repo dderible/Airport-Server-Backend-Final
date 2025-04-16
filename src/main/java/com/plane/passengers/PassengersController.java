@@ -18,11 +18,13 @@ public class PassengersController {
     @Autowired
     private AircraftService aircraftService;
 
+    // Retrieve all passengers
     @GetMapping("/getAllPassengers")
     public Iterable<Passengers> getAllPassengers() {
         return passengersService.getAllPassengers();
     }
 
+    // Create a passenger
     @PostMapping("/addNewPassenger")
     public Passengers addNewPassenger(@RequestBody Passengers passenger) {
         Optional<Aircraft> aircraftOptional = Optional.ofNullable(aircraftService.findByAircraftId(passenger.getAircraftId().getAircraftId()));
@@ -40,23 +42,27 @@ public class PassengersController {
         return passengersService.addPassenger(passenger);
     }
 
+    // Find a passenger by ID
     @GetMapping("/findByPassengerID/{passengerId}")
     public ResponseEntity<Passengers> findByPassengerId(@PathVariable Long passengerId) {
         Optional<Passengers> passengers = passengersService.findByPassengerId(passengerId);
         return passengers.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Retrieve an aircraft for a passenger
     @GetMapping("/getAircraftForPassenger")
     public Iterable<Passengers> getAircraftForPassenger(@RequestParam("ID") Long passengerId) {
         return passengersService.findByAircraftId(passengerId);
     }
 
+    // Update a passenger
     @PutMapping("/updatePassengerById/{passengerId}")
     public ResponseEntity<Passengers> updatePassenger(@PathVariable Long passengerId,@RequestBody Passengers updatedPassenger) {
         Optional<Passengers> passengers = Optional.ofNullable(passengersService.updatePassenger(passengerId, updatedPassenger));
         return passengers.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Delete a passenger
     @DeleteMapping("/deletePassengerById/{passengerId}")
     public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerId) {
         if(passengersService.deletePassenger(passengerId)) {

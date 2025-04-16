@@ -16,6 +16,7 @@ public class Cities {
     private String cityName;
     private String country;
 
+    // Relationships
     @OneToMany(cascade = CascadeType.ALL)
     private List<Airport> airports = new ArrayList<Airport>();
     private String population;
@@ -31,6 +32,7 @@ public class Cities {
         this.population = population;
     }
 
+    // Getters & Setters
     public Long getCityId() {
         return cityId;
     }

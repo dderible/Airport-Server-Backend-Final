@@ -17,6 +17,7 @@ public class Airline {
     private String airlineName;
     private String originCountry;
 
+    // Relationship
     @OneToMany
     private List<Flight> flightList;
 
@@ -37,6 +38,7 @@ public class Airline {
         this.flightList = new ArrayList<>();
     }
 
+    // Getters & Setters
     public Long getAirlineId() {
         return airlineId;
     }
@@ -86,7 +88,4 @@ public class Airline {
                 ", flightList=" + flightList +
                 '}';
     }
-
-    // TBD: reminder for myself to check if we need function to
-    // actually register a passenger to an airline
 }
