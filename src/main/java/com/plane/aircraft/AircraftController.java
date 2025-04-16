@@ -5,6 +5,7 @@ import com.plane.airport.AirportService;
 import com.plane.cities.Cities;
 import com.plane.passengers.Passengers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -64,10 +65,8 @@ public class AircraftController {
     // Delete an aircraft
     @DeleteMapping("/deleteAircraftById/{aircraftId}")
     public ResponseEntity<Void> deleteAircraft(@PathVariable Long aircraftId) {
-        if (aircraftService.deleteAircraft(aircraftId)) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        aircraftService.deleteAircraft(aircraftId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     // Get passengers on an aircraft by aircraft ID

@@ -1,6 +1,7 @@
 package com.plane.gates;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,19 +21,20 @@ public class GateController {
 
     // Delete a gate
     @DeleteMapping("/deleteGateById/{gateId}")
-    public void deleteGate(@PathVariable long gateId) {
+    public ResponseEntity<Void> deleteGate(@PathVariable Long gateId) {
         gateService.deleteGateById(gateId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     // Update a gate
     @PutMapping("/updateGate/{gateId}")
-    public ResponseEntity<Gate> updateGate(@PathVariable long gateId, @RequestBody Gate gate) {
+    public ResponseEntity<Gate> updateGate(@PathVariable Long gateId, @RequestBody Gate gate) {
         return ResponseEntity.ok(gateService.updateGate(gateId, gate));
     }
 
     // Search for gates by ID
     @GetMapping("/getGateById/{gateId}")
-    public Gate getGateById(@PathVariable long gateId) {
+    public Gate getGateById(@PathVariable Long gateId) {
         return gateService.getGateById(gateId);
     }
 

@@ -3,6 +3,7 @@ package com.plane.passengers;
 import com.plane.aircraft.Aircraft;
 import com.plane.aircraft.AircraftService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
@@ -65,12 +66,8 @@ public class PassengersController {
     // Delete a passenger
     @DeleteMapping("/deletePassengerById/{passengerId}")
     public ResponseEntity<Void> deletePassenger(@PathVariable Long passengerId) {
-        if(passengersService.deletePassenger(passengerId)) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        passengersService.deletePassenger(passengerId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
-
 }
 

@@ -77,10 +77,8 @@ public class AirportController {
     // Delete an airport
     @DeleteMapping("/deleteAirportById/{airportId}")
     public ResponseEntity<Void> deleteAirport(@PathVariable Long airportId) {
-        if (airportService.deleteAirport(airportId)) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        airportService.deleteAirport(airportId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     // Add an airport to a flight
