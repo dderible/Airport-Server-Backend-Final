@@ -1,6 +1,7 @@
 package com.plane.cities;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
@@ -43,10 +44,7 @@ public class CitiesController {
     // Delete a city by ID
     @DeleteMapping("/deleteCityById/{cityId}")
     public ResponseEntity<Void> deleteCity(@PathVariable Long cityId) {
-        if (citiesService.deleteCity(cityId)) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        citiesService.deleteCity(cityId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
 }
