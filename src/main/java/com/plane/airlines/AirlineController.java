@@ -48,7 +48,7 @@ public class AirlineController {
     }
 
     @GetMapping("/search/by-airline-id")
-    public ResponseEntity<List<Airline>> getByAirlineId(@RequestParam Long airlineId) {
+    public ResponseEntity<Airline> getByAirlineId(@RequestParam Long airlineId) {
         return ResponseEntity.ok(airlineService.getByAirlineId(airlineId));
     }
 

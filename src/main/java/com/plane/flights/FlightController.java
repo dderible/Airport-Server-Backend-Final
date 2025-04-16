@@ -58,7 +58,7 @@ public class FlightController {
     }
 
     @GetMapping("/search/by-flight-id")
-    public ResponseEntity<List<Flight>> getByFlightId(@RequestParam Long flightId) {
+    public ResponseEntity<Flight> getByFlightId(@RequestParam Long flightId) {
         return ResponseEntity.ok(flightService.getByFlightId(flightId));
     }
 

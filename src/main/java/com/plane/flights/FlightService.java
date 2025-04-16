@@ -33,7 +33,7 @@ public class FlightService {
         flightRepository.delete(flight);
     }
 
-    public List<Flight> getByFlightId(Long flightId) {
+    public Flight getByFlightId(Long flightId) {
         return flightRepository.findByFlightId(flightId);
     }
 
@@ -50,8 +50,8 @@ public class FlightService {
     }
 
     public Flight updateFlight(Long flightId, Flight flightDetails) {
-        Flight flight = flightRepository.findByFlightId(flightId)
-                .orElseThrow(() -> new EntityNotFoundException("ERROR: No Flight with id: " + flightId + " exists."));
+        Flight flight = flightRepository.findByFlightId(flightId);
+               // .orElseThrow(() -> new EntityNotFoundException("ERROR: No Flight with id: " + flightId + " exists."));
         flight.setFlightSeat(flightDetails.getFlightSeat());
         flight.setFlightDestination(flightDetails.getFlightDestination());
         flight.setFlightOrigin(flightDetails.getFlightOrigin());

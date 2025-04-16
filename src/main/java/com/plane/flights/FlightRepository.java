@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface FlightRepository extends JpaRepository<Flight, Long> {
-    List<Flight> findByFlightId(Long flightId);
+    Flight findByFlightId(Long flightId);
     List<Flight> findByFlightDestination(String flightDestination);
     List<Flight> findByFlightOrigin(String flightOrigin);
     List<Flight> findByFlightAirline(String flightAirline);

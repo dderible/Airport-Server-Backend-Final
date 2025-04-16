@@ -39,15 +39,16 @@ public class AirlineService {
         return airlineRepository.findByAirlineName(airlineName);
     }
 
-    public List<Airline> getByAirlineId(Long airlineId) {
+    public Airline getByAirlineId(Long airlineId) {
         return airlineRepository.findByAirlineId(airlineId);
     }
 
     public Airline updateAirline(Long airlineId) {
-        Airline airline = airlineRepository.findByAirlineId(airlineId)
-                .orElseThrow(() -> new EntityNotFoundException("ERROR: No Flight with id: " + airlineId + " exists."));
+        Airline airline = airlineRepository.findByAirlineId(airlineId);
+              // .orElseThrow(() -> new EntityNotFoundException("ERROR: No Airline with id: " + airlineId + " exists."));
         airline.setAirlineName(airline.getAirlineName());
         airline.setOriginCountry(airline.getOriginCountry());
+
         return airlineRepository.save(airline);
     }
 
