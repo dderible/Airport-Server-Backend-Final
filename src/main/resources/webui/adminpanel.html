@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+<body>
+
+<h1>Aircraft</h1>
+<br/>
+<h2>Add</h2>
+<form action="/addNewAircraft" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/deleteAircraftById/{aircraftId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Update</h2>
+<form action="/updateAircraftById/{aircraftId}" method="put">
+    <input type="text" name="update" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+
+<h1>Airline</h1>
+<br/>
+<h2>Add</h2>
+<form action="/create-airline" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/{airlineId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+
+<h1>Airport</h1>
+<br/>
+<h2>Add</h2>
+<form action="/addNewAirport" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/deleteAirportById/{airportId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Update</h2>
+<form action="/updateAirportById/{airportId}" method="put">
+    <input type="text" name="update" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+
+<h1>City</h1>
+<br/>
+<h2>Add</h2>
+<form action="/addNewCity" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/deleteCityById/{cityId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Update</h2>
+<form action="/updateCity/{cityId}" method="put">
+    <input type="text" name="update" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+
+<h1>Flight</h1>
+<br/>
+<h2>Add</h2>
+<form action="/create-flight" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/{flightId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+
+<h1>Gate</h1>
+<br/>
+<h2>Add</h2>
+<form action="/addGate" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/deleteGateById/{gateId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Update</h2>
+<form action="/updateGate/{gateId}" method="put">
+    <input type="text" name="update" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+
+<h1>Passenger</h1>
+<br/>
+<h2>Add</h2>
+<form action="/addNewPassenger" method="post">
+    <input type="text" name="add" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Delete</h2>
+<form action="/deletePassengerById/{passengerId}" method="delete">
+    <input type="text" name="delete" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+<h2>Update</h2>
+<form action="/updatePassengerById/{passengerId}" method="put">
+    <input type="text" name="update" required>
+    <button type="submit">Submit</button>
+</form>
+<br/>
+
+</body>
+</html>
