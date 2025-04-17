@@ -21,13 +21,13 @@ public class AirportController {
 
     @Autowired
     private CitiesService citiesService;
+
     @Autowired
     private FlightService flightService;
 
     // Create an airport
     @PostMapping("/addNewAirport")
     public Airport addNewAirport(@RequestBody Airport airport) {
-
         Optional<Cities> cityOptional = Optional.ofNullable(citiesService.findByCityName(airport.getCityName().getCityName()));
 
         Cities cities;
@@ -103,15 +103,26 @@ public class AirportController {
 
     // Retrieve a list of airport's arrivals
     @GetMapping("/airport-arrivals")
-    public ResponseEntity<List<Flight>> getAirportArrivals(String flightOrigin) {
-        List<Flight> arrivals = flightService.getByFlightOrigin(flightOrigin);
+    public ResponseEntity<List<Flight>> getAirportArrivals(@RequestParam String airportCode) {
+        System.out.println("Received request for airport arrivals with code: " + airportCode);
+        // For arrivals, we want flights where this airport is the destination
+        List<Flight> arrivals = flightService.getByFlightDestination(airportCode);
         return ResponseEntity.ok(arrivals);
     }
 
     // Retrieve a list of airport's departures
     @GetMapping("/airport-departures")
-    public ResponseEntity<List<Flight>> getAirportDepartures(String flightDestination) {
-        List<Flight> departures = flightService.getByFlightDestination(flightDestination);
+    public ResponseEntity<List<Flight>> getAirportDepartures(@RequestParam String airportCode) {
+        System.out.println("Received request for airport departures with code: " + airportCode);
+        // For departures, we want flights where this airport is the origin
+        List<Flight> departures = flightService.getByFlightOrigin(airportCode);
         return ResponseEntity.ok(departures);
+    }
+
+    // Get all flights for an airport
+    @GetMapping("/getFlightsByAirportId/{airportId}")
+    public ResponseEntity<Iterable<Flight>> getFlightsByAirport(@PathVariable Long airportId) {
+        Iterable<Flight> flights = airportService.listFlightsByAirportId(airportId);
+        return ResponseEntity.ok(flights);
     }
 }

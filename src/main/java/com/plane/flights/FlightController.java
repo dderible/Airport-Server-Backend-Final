@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/flights")
 public class FlightController {
 
     private final FlightService flightService;
-
     private final GateRepository gateRepository;
 
     public FlightController(FlightService flightService, GateRepository gateRepository) {
@@ -25,6 +25,7 @@ public class FlightController {
     // Retrieve all flights
     @GetMapping("/get-all-flights")
     public ResponseEntity<List<Flight>> getAllFlights() {
+        System.out.println("Fetching all flights");
         return ResponseEntity.ok(flightService.getAllFlights());
     }
 
@@ -66,12 +67,14 @@ public class FlightController {
     // Search for a flight by destination location
     @GetMapping("/search/by-flight-destination")
     public ResponseEntity<List<Flight>> getByFlightDestination(@RequestParam String flightDestination) {
+        System.out.println("Searching flights by destination: " + flightDestination);
         return ResponseEntity.ok(flightService.getByFlightDestination(flightDestination));
     }
 
     // Search for a flight by origin location
     @GetMapping("/search/by-flight-origin")
     public ResponseEntity<List<Flight>> getByFlightOrigin(@RequestParam String flightOrigin) {
+        System.out.println("Searching flights by origin: " + flightOrigin);
         return ResponseEntity.ok(flightService.getByFlightOrigin(flightOrigin));
     }
 

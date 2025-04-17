@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/airlines")
 public class AirlineController {
 
@@ -23,6 +24,7 @@ public class AirlineController {
     // Retrieve all airlines
     @GetMapping("/get-all-airlines")
     public ResponseEntity<List<Airline>> getAllAirlines() {
+        System.out.println("Fetching all airlines");
         return ResponseEntity.ok(airlineService.getAllAirlines());
     }
 
