@@ -3,7 +3,7 @@ services:
   myapp-main:
     image: airport-server:latest
     ports:
-      - 8080:8080
+      - "8081:8081"
     environment:
       - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/airport_db
       - spring.datasource.password=password123
