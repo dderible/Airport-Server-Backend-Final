@@ -31,7 +31,7 @@ public class AircraftService {
 
     public Optional<Aircraft> updateAircraft(Long aircraftId, Aircraft updatedAircraft) {
         return aircraftRepository.findById(aircraftId).map(aircraft -> {
-            aircraft.setType(updatedAircraft.getType());
+            aircraft.setModel(updatedAircraft.getModel());
             aircraft.setAirlineName(updatedAircraft.getAirlineName());
             aircraft.setNumberOfPassengers(updatedAircraft.getNumberOfPassengers());
             return aircraftRepository.save(aircraft);

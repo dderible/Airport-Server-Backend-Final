@@ -51,12 +51,12 @@ public class Aircraft {
         this.aircraftId = aircraftId;
     }
 
-    public String getType() {
+    public String getModel() {
         return model;
     }
 
-    public void setType(String type) {
-        this.model = type;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getAirlineName() {
