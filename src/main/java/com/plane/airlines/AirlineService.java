@@ -57,4 +57,10 @@ public class AirlineService {
                 .map(Airline::getFlightList)
                 .orElse(Collections.emptyList());
     }
+
+    public int numberOfFlights(Long airlineId) {
+        Airline airline = airlineRepository.findById(airlineId)
+                .orElseThrow(() -> new EntityNotFoundException("ERROR: No Airline with id: " + airlineId + " exists."));
+        return airline.getFlightList().size();
+    }
 }

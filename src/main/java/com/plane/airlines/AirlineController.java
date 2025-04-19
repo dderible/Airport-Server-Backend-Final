@@ -85,4 +85,11 @@ public class AirlineController {
     public Iterable<Flight> getAllFlightsForAirlineById(@PathVariable Long airlineId) {
         return airlineService.listFlightsByAirlineId(airlineId);
     }
+
+    // Retrieve number of flights for an airline
+    @GetMapping("/{airlineId}/numberOfFlights")
+    public ResponseEntity<Integer> numberOfFlights(@PathVariable Long airlineId) {
+        int flightCount = airlineService.numberOfFlights(airlineId);
+        return ResponseEntity.ok(flightCount);
+    }
 }

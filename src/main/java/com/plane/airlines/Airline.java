@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table (name = "airlines")
 public class Airline {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long airlineId;
 
+    private Long flightsNumber;
     private String airlineName;
     private String originCountry;
 
@@ -21,10 +21,11 @@ public class Airline {
     @OneToMany
     private List<Flight> flightList;
 
-    public Airline(Long airlineId, String airlineName, String originCountry) {
+    public Airline(Long airlineId, String airlineName, String originCountry, Long flightsNumber) {
         this.airlineId = airlineId;
         this.airlineName = airlineName;
         this.originCountry = originCountry;
+        this.flightsNumber = flightsNumber;
         this.flightList = new ArrayList<>();
     }
 
@@ -32,9 +33,10 @@ public class Airline {
         this.flightList = new ArrayList<>();
     }
 
-    public Airline(String airlineName, String originCountry) {
+    public Airline(String airlineName, String originCountry, Long flightsNumber) {
         this.airlineName = airlineName;
         this.originCountry = originCountry;
+        this.flightsNumber = flightsNumber;
         this.flightList = new ArrayList<>();
     }
 
@@ -63,6 +65,14 @@ public class Airline {
         this.originCountry = originCountry;
     }
 
+    public Long getFlightsNumber() {
+        return flightsNumber;
+    }
+
+    public void setFlightsNumber(Long flightsNumber) {
+        this.flightsNumber = flightsNumber;
+    }
+
     public List<Flight> getFlightList() {
         return flightList;
     }
@@ -83,6 +93,7 @@ public class Airline {
     public String toString() {
         return "Airline{" +
                 "airlineId=" + airlineId +
+                ", flightsNumber=" + flightsNumber +
                 ", airlineName='" + airlineName + '\'' +
                 ", originCountry='" + originCountry + '\'' +
                 ", flightList=" + flightList +
